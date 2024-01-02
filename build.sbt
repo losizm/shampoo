@@ -1,8 +1,9 @@
 organization  := "com.github.losizm"
 name          := "shampoo"
-version       := "0.1.0-SNAPSHOT"
+version       := "0.1.0"
 versionScheme := Some("early-semver")
 description   := "The YAML library for Scala"
+homepage      := Some(url("https://github.com/losizm/shampoo"))
 licenses      := List("Apache License, Version 2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
 
 scalaVersion  := "3.3.1"
