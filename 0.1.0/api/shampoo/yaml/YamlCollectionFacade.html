@@ -1,0 +1,2595 @@
+<!DOCTYPE html><html data-pathToRoot="../../"><head><meta charset="utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta><title>YamlCollectionFacade</title><link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico"></link><script type="text/javascript" src="../../scripts/theme.js"></script><script type="text/javascript" src="../../scripts/searchData.js" defer="true"></script><script type="text/javascript" src="../../scripts/scastieConfiguration.js" defer="true"></script><link rel="stylesheet" href="../../styles/theme/bundle.css"></link><link rel="stylesheet" href="../../styles/theme/components/bundle.css"></link><link rel="stylesheet" href="../../styles/theme/components/button/bundle.css"></link><link rel="stylesheet" href="../../styles/theme/layout/bundle.css"></link><link rel="stylesheet" href="../../styles/nord-light.css"></link><link rel="stylesheet" href="../../styles/dotty-icons.css"></link><link rel="stylesheet" href="../../styles/filter-bar.css"></link><link rel="stylesheet" href="../../styles/code-snippets.css"></link><link rel="stylesheet" href="../../styles/searchbar.css"></link><link rel="stylesheet" href="../../styles/social-links.css"></link><link rel="stylesheet" href="../../styles/versions-dropdown.css"></link><link rel="stylesheet" href="../../styles/content-contributors.css"></link><link rel="stylesheet" href="../../styles/fontawesome.css"></link><script type="text/javascript" src="../../hljs/highlight.pack.js" defer="true"></script><script type="text/javascript" src="../../scripts/hljs-scala3.js" defer="true"></script><script type="text/javascript" src="../../scripts/ux.js" defer="true"></script><script type="text/javascript" src="../../scripts/common/component.js" defer="true"></script><script type="text/javascript" src="../../scripts/common/utils.js" defer="true"></script><script type="text/javascript" src="../../scripts/components/FilterBar.js" defer="true"></script><script type="text/javascript" src="../../scripts/components/DocumentableList.js" defer="true"></script><script type="text/javascript" src="../../scripts/components/Input.js" defer="true"></script><script type="text/javascript" src="../../scripts/components/FilterGroup.js" defer="true"></script><script type="text/javascript" src="../../scripts/components/Filter.js" defer="true"></script><script type="text/javascript" src="../../scripts/scaladoc-scalajs.js" defer="true"></script><script type="text/javascript" src="../../scripts/contributors.js" defer="true"></script><script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js" defer="true"></script><script type="text/javascript" src="https://d3js.org/d3.v6.min.js" defer="true"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/graphlib-dot@0.6.2/dist/graphlib-dot.min.js" defer="true"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dagre-d3/0.6.1/dagre-d3.min.js" defer="true"></script><script type="text/javascript" src="https://scastie.scala-lang.org/embedded.js" defer="true"></script><script type="text/javascript" src="../../scripts/data.js" defer="true"></script><link rel="stylesheet" href="../../styles/apistyles.css"></link><script>var pathToRoot = "../../";</script></head><body><div id=""><div id="header" class="body-small"><div class="header-container-left"><a href="../../" class="logo-container"><span id="project-logo" class="project-logo"><img src="../../project-logo/logo.svg"></img></span><span id="dark-project-logo" class="project-logo"><img src="../../project-logo/logo.svg"></img></span><span class="project-name h300">Shampoo</span></a><span onclick="dropdownHandler(event)" class="text-button with-arrow" id="dropdown-trigger"><a><div class="projectVersion">0.1.0</div></a></span><div id="version-dropdown" class="dropdown-menu"></div></div><div class="header-container-right"><button id="search-toggle" class="icon-button"></button><span id="theme-toggle" class="icon-button"></span><span id="mobile-menu-toggle" class="icon-button hamburger"></span></div></div><div id="mobile-menu"><div class="mobile-menu-header body-small"><span class="mobile-menu-logo"><span id="project-logo" class="project-logo"><img src="../../project-logo/logo.svg"></img></span><span id="dark-project-logo" class="project-logo"><img src="../../project-logo/logo.svg"></img></span><span class="project-name h300">Shampoo</span></span><button id="mobile-menu-close" class="icon-button close"></button></div><div class="mobile-menu-container body-medium"><input id="mobile-scaladoc-searchbar-input" class="scaladoc-searchbar-input" type="search" placeholder="Find anything"></input><span id="mobile-theme-toggle" class="mobile-menu-item mode"></span></div></div><span id="mobile-sidebar-toggle" class="floating-button"></span><div id="leftColumn" class="body-small"><div class="switcher-container"><a id="api-nav-button" class="switcher h100 selected" href="../../index.html">API</a></div><nav id="api-nav" class="side-menu"><div class="ni n0 expanded"><span class="nh h100 expanded cs"><button class="ar icon-button expanded"></button><a href="../yaml.html"><span class="micon pa"></span><span>shampoo.yaml</span></a></span><div class="ni n1 "><span class="nh "><a href="Yaml$.html"><span class="micon ob"></span><span>Yaml</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlBoolean.html"><span class="micon tr"></span><span>YamlBoolean</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlBoolean$.html"><span class="micon ob"></span><span>YamlBoolean</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlCollection.html"><span class="micon tr"></span><span>YamlCollection</span></a></span></div><div class="ni n1 expanded"><span class="nh h100 selected"><a href="#"><span class="micon cl"></span><span>YamlCollectionFacade</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlConstructor.html"><span class="micon tr"></span><span>YamlConstructor</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlException.html"><span class="micon cl"></span><span>YamlException</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlMapping.html"><span class="micon tr"></span><span>YamlMapping</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlMappingBuilder.html"><span class="micon cl"></span><span>YamlMappingBuilder</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlNode.html"><span class="micon tr"></span><span>YamlNode</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlNull$.html"><span class="micon ob"></span><span>YamlNull</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlNumber.html"><span class="micon tr"></span><span>YamlNumber</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlNumber$.html"><span class="micon ob"></span><span>YamlNumber</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlRepresenter.html"><span class="micon tr"></span><span>YamlRepresenter</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlScalar.html"><span class="micon tr"></span><span>YamlScalar</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlSequence.html"><span class="micon tr"></span><span>YamlSequence</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlSequenceBuilder.html"><span class="micon cl"></span><span>YamlSequenceBuilder</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlString.html"><span class="micon tr"></span><span>YamlString</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlString$.html"><span class="micon ob"></span><span>YamlString</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlTimestamp.html"><span class="micon tr"></span><span>YamlTimestamp</span></a></span></div><div class="ni n1 "><span class="nh "><a href="YamlTimestamp$.html"><span class="micon ob"></span><span>YamlTimestamp</span></a></span></div></div></nav></div><div id="footer" class="body-small"><div class="left-container">Generated with</div><div class="right-container"><div class="text"></div></div><div class="text-mobile"></div></div><div id="scaladoc-searchBar"></div><div id="main"><div class="breadcrumbs container"><a href="../../index.html">Shampoo</a>/<a href="../yaml.html">shampoo.yaml</a>/<a href="YamlCollectionFacade.html">YamlCollectionFacade</a></div><div id="content" class="body-medium"><div><div class="cover-header">
+ <span class="icon"><span class="micon cl"></span></span>
+ <h1 class="h600 single">YamlCollectionFacade</h1>
+</div>
+<div class="fqname body-large">
+ <span>shampoo.yaml.YamlCollectionFacade</span>
+</div>
+<div class="main-signature mono-small-block">
+ <div class="signature">
+  <span class="signature-short"><span class="modifiers"></span><span class="kind"><span t="k">class </span></span><a href="YamlCollectionFacade.html" t="n" class="documentableName ">YamlCollectionFacade</a><span t="k"> extends </span><a href="YamlMapping.html" t="t">YamlMapping</a><span t="k">, </span></span><span class="signature-long"><a href="YamlSequence.html" t="t">YamlSequence</a></span>
+ </div>
+</div>
+<div class="cover">
+ <div class="doc">
+  <p>Assumes either YAML mapping or YAML sequence.</p> 
+ </div>
+ <section id="attributes">
+  <h2 class="h500">Attributes</h2>
+  <dl class="attributes">
+   <dt class="body-small">
+    See also
+   </dt>
+   <dd class="body-medium">
+    <div>
+     <div>
+      <p><a href="../yaml.html#yamlStructureFacadeConversion-0">yamlStructureFacadeConversion</a></p> 
+     </div>
+    </div>
+   </dd>
+   <dt class="body-small">
+    Note
+   </dt>
+   <dd class="body-medium">
+    <div>
+     <div>
+      <p>A collection facade is created by conversion only.</p> 
+     </div>
+    </div>
+   </dd>
+   <dt class="body-small">
+    Graph
+   </dt>
+   <dd class="body-medium">
+    <div id="inheritance-diagram" class="diagram-class showGraph">
+     <button type="button" class="label-only-button" onclick="zoomOut()">Reset zoom</button><button type="button" class="label-only-button" onclick="hideGraph()">Hide graph</button><button type="button" class="label-only-button" onclick="showGraph()">Show graph</button>
+     <svg id="graph"></svg>
+     <script type="text/dot" id="dot"> digraph g {
+ node0 [id=node0, label="<span style=\"color: #FFFFFF;\">class <a href=\"YamlCollectionFacade.html\" t=\"n\">YamlCollectionFacade</a></span>", class="class vertex"];
+node1 [id=node1, label="<span style=\"color: #FFFFFF;\">class <span data-unresolved-link=\"\" t=\"n\">Object</span></span>", class="class vertex"];
+node2 [id=node2, label="<span style=\"color: #FFFFFF;\">class <span data-unresolved-link=\"\" t=\"n\">Any</span></span>", class="class vertex"];
+node3 [id=node3, label="<span style=\"color: #FFFFFF;\">trait <span data-unresolved-link=\"\" t=\"n\">Matchable</span></span>", class="trait vertex"];
+node4 [id=node4, label="<span style=\"color: #FFFFFF;\">sealed trait <a href=\"YamlMapping.html\" t=\"n\">YamlMapping</a></span>", class="trait vertex"];
+node5 [id=node5, label="<span style=\"color: #FFFFFF;\">sealed trait <a href=\"YamlCollection.html\" t=\"n\">YamlCollection</a></span>", class="trait vertex"];
+node6 [id=node6, label="<span style=\"color: #FFFFFF;\">sealed trait <a href=\"YamlNode.html\" t=\"n\">YamlNode</a></span>", class="trait vertex"];
+node7 [id=node7, label="<span style=\"color: #FFFFFF;\">sealed trait <a href=\"YamlSequence.html\" t=\"n\">YamlSequence</a></span>", class="trait vertex"];
+
+
+ node0 -> node1;
+node1 -> node2;
+node1 -> node3;
+node3 -> node2;
+node0 -> node4;
+node4 -> node1;
+node4 -> node5;
+node5 -> node1;
+node5 -> node6;
+node6 -> node1;
+node0 -> node7;
+node7 -> node1;
+node7 -> node5;
+
+}
+</script>
+    </div>
+   </dd>
+   <dt class="body-small">
+    Supertypes
+   </dt>
+   <dd class="body-medium">
+    <div class="mono-small-block supertypes">
+     <div>
+      trait <a href="YamlSequence.html" t="n">YamlSequence</a>
+     </div>
+     <div>
+      trait <a href="YamlMapping.html" t="n">YamlMapping</a>
+     </div>
+     <div>
+      trait <a href="YamlCollection.html" t="n">YamlCollection</a>
+     </div>
+     <div>
+      trait <a href="YamlNode.html" t="n">YamlNode</a>
+     </div>
+     <div>
+      class <span data-unresolved-link="" t="n">Object</span>
+     </div>
+     <div>
+      trait <span data-unresolved-link="" t="n">Matchable</span>
+     </div>
+     <div>
+      class <span data-unresolved-link="" t="n">Any</span>
+     </div><span class="show-all-code show-content text-button h100">Show all</span>
+    </div>
+   </dd>
+  </dl>
+ </section>
+</div>
+<section id="members-list">
+ <h2 class="h500">Members list</h2>
+ <div class="documentableFilter">
+  <div class="filtersContainer"></div>
+  <input class="filterableInput" placeholder="Filter by any phrase" data-test-id="filterBarInput" type="search"><button class="clearButton label-only-button" data-test-id="filterBarClearButton">Clear all</button>
+ </div>
+ <div class="membersList expand">
+  <div class="tabs">
+   <div class="contents">
+    <section id="Value-members">
+     <div data-togglable="Value members" class="tab expand">
+      <div class="member-group-header">
+       <h3 data-togglable="Value members" class="h400">Value members</h3>
+      </div>
+      <section id="Concrete-methods">
+       <div class="documentableList expand">
+        <div class="documentableList-expander">
+         <button class="icon-button show-content expand"></button>
+         <h4 class="groupHeader h200">Concrete methods</h4>
+        </div>
+        <div class="documentableElement" id="apply-54c">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#apply-54c" t="n" class="documentableName ">apply</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <a href="YamlNode.html" t="t">YamlNode</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key or value does not exist</p> 
+                </div>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="apply-fffff9ca">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#apply-fffff9ca" t="n" class="documentableName ">apply</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <a href="YamlNode.html" t="t">YamlNode</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="contains-fffffd1b">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#contains-fffffd1b" t="n" class="documentableName ">contains</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">Boolean</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Tests for key.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Tests for key.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="keys-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#keys-0" t="n" class="documentableName ">keys</a>: <span data-unresolved-link="" t="t">Set</span>[<span data-unresolved-link="" t="t">String</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets keys.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets keys.</p> 
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="size-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#size-0" t="n" class="documentableName ">size</a>: <span data-unresolved-link="" t="t">Int</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets collection size.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets collection size.</p> 
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="toMap-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#toMap-0" t="n" class="documentableName ">toMap</a>: <span data-unresolved-link="" t="t">Map</span>[<span data-unresolved-link="" t="t">String</span>, <a href="YamlNode.html" t="t">YamlNode</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets key-node map.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets key-node map.</p> 
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="toSeq-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#toSeq-0" t="n" class="documentableName ">toSeq</a>: <span data-unresolved-link="" t="t">Seq</span>[<a href="YamlNode.html" t="t">YamlNode</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node sequence.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node sequence.</p> 
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section id="Inherited-methods">
+       <div class="documentableList expand">
+        <div class="documentableList-expander">
+         <button class="icon-button show-content expand"></button>
+         <h4 class="groupHeader h200">Inherited methods</h4>
+        </div>
+        <div class="documentableElement" id="as-acf" data-f-inherited="YamlNode">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#as-acf" t="n" class="documentableName ">as</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>]): <span data-unresolved-link="" t="t">T</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs data.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs data.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               constructor
+              </dt>
+              <dd class="body-medium">
+               <p>data constructor</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlNode.html#as-acf">YamlNode</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="get-fffffd22" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#get-fffffd22" t="n" class="documentableName ">get</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">Option</span>[<a href="YamlNode.html" t="t">YamlNode</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Optionally gets node.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Optionally gets node.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#get-fffffd22">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getBigDecimal-788" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getBigDecimal-788" t="n" class="documentableName ">getBigDecimal</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">BigDecimal</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>BigDecimal</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>BigDecimal</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getBigDecimal-788">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getBigDecimal-fffff30a" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getBigDecimal-fffff30a" t="n" class="documentableName ">getBigDecimal</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">BigDecimal</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>BigDecimal</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>BigDecimal</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getBigDecimal-fffff30a">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getBigInt-fa6" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getBigInt-fa6" t="n" class="documentableName ">getBigInt</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">BigInt</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>BigInt</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>BigInt</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getBigInt-fa6">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getBigInt-fffffc28" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getBigInt-fffffc28" t="n" class="documentableName ">getBigInt</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">BigInt</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>BigInt</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>BigInt</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getBigInt-fffffc28">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getBoolean-ffffff99" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getBoolean-ffffff99" t="n" class="documentableName ">getBoolean</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">Boolean</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Boolean</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Boolean</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getBoolean-ffffff99">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getBoolean-fffffd1b" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getBoolean-fffffd1b" t="n" class="documentableName ">getBoolean</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">Boolean</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Boolean</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Boolean</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getBoolean-fffffd1b">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getDouble-640" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getDouble-640" t="n" class="documentableName ">getDouble</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">Double</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Double</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Double</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getDouble-640">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getDouble-fffff07e" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getDouble-fffff07e" t="n" class="documentableName ">getDouble</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">Double</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Double</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Double</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getDouble-fffff07e">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getFloat-fffffe0d" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getFloat-fffffe0d" t="n" class="documentableName ">getFloat</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">Float</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Float</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Float</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getFloat-fffffe0d">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getFloat-fffff40f" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getFloat-fffff40f" t="n" class="documentableName ">getFloat</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">Float</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Float</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Float</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getFloat-fffff40f">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getInstant-ffffffa5" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getInstant-ffffffa5" t="n" class="documentableName ">getInstant</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">Instant</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Instant</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Instant</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getInstant-ffffffa5">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getInstant-fffffc27" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getInstant-fffffc27" t="n" class="documentableName ">getInstant</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">Instant</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Instant</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Instant</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getInstant-fffffc27">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getInt-fffffbe0" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getInt-fffffbe0" t="n" class="documentableName ">getInt</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">Int</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Int</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Int</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getInt-fffffbe0">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getInt-a62" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getInt-a62" t="n" class="documentableName ">getInt</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">Int</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Int</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Int</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getInt-a62">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getLocalDate-e7d" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getLocalDate-e7d" t="n" class="documentableName ">getLocalDate</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">LocalDate</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>LocalDate</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>LocalDate</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getLocalDate-e7d">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getLocalDate-27f" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getLocalDate-27f" t="n" class="documentableName ">getLocalDate</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">LocalDate</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>LocalDate</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>LocalDate</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getLocalDate-27f">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getLocalDateTime-fffffeea" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getLocalDateTime-fffffeea" t="n" class="documentableName ">getLocalDateTime</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">LocalDateTime</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>LocalDateTime</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>LocalDateTime</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getLocalDateTime-fffffeea">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getLocalDateTime-fffff1ec" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getLocalDateTime-fffff1ec" t="n" class="documentableName ">getLocalDateTime</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">LocalDateTime</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>LocalDateTime</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>LocalDateTime</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getLocalDateTime-fffff1ec">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getLong-fffff0ab" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getLong-fffff0ab" t="n" class="documentableName ">getLong</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">Long</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Long</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Long</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getLong-fffff0ab">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getLong-269" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getLong-269" t="n" class="documentableName ">getLong</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">Long</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>Long</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>Long</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getLong-269">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getMapping-fffff806" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getMapping-fffff806" t="n" class="documentableName ">getMapping</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <a href="YamlMapping.html" t="t">YamlMapping</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>YamlMapping</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>YamlMapping</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getMapping-fffff806">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getMapping-fffff544" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getMapping-fffff544" t="n" class="documentableName ">getMapping</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <a href="YamlMapping.html" t="t">YamlMapping</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>YamlMapping</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>YamlMapping</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getMapping-fffff544">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getOffsetDateTime-70a" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getOffsetDateTime-70a" t="n" class="documentableName ">getOffsetDateTime</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">OffsetDateTime</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>OffsetDateTime</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>OffsetDateTime</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getOffsetDateTime-70a">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getOffsetDateTime-448" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getOffsetDateTime-448" t="n" class="documentableName ">getOffsetDateTime</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">OffsetDateTime</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>OffsetDateTime</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>OffsetDateTime</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getOffsetDateTime-448">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getOrElse-fffff7e6" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getOrElse-fffff7e6" t="n" class="documentableName ">getOrElse</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>, <span t="k"></span><span data-unresolved-link="" t="n">default</span>: <span t="k">=&gt; </span><a href="YamlNode.html" t="t">YamlNode</a>): <a href="YamlNode.html" t="t">YamlNode</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node or returns default node.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node or returns default node.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               default
+              </dt>
+              <dd class="body-medium">
+               <p>default node</p> 
+              </dd>
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getOrElse-fffff7e6">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getSequence-ffffff89" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getSequence-ffffff89" t="n" class="documentableName ">getSequence</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <a href="YamlSequence.html" t="t">YamlSequence</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>YamlSequence</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>YamlSequence</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getSequence-ffffff89">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getSequence-fffffa0b" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getSequence-fffffa0b" t="n" class="documentableName ">getSequence</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <a href="YamlSequence.html" t="t">YamlSequence</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>YamlSequence</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>YamlSequence</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getSequence-fffffa0b">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getString-78c" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getString-78c" t="n" class="documentableName ">getString</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">String</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>String</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>String</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#getString-78c">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="getString-fffff2ca" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#getString-fffff2ca" t="n" class="documentableName ">getString</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">String</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Gets node as <code>String</code>.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Gets node as <code>String</code>.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#getString-fffff2ca">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="isEmpty-0" data-f-inherited="YamlCollection">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#isEmpty-0" t="n" class="documentableName ">isEmpty</a>: <span data-unresolved-link="" t="t">Boolean</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Tests for empty.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Tests for empty.</p> 
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlCollection.html#isEmpty-0">YamlCollection</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="isNull-ffffff99" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#isNull-ffffff99" t="n" class="documentableName ">isNull</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <span data-unresolved-link="" t="t">Boolean</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Tests for null.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Tests for null.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#isNull-ffffff99">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="isNull-fffffd1b" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#isNull-fffffd1b" t="n" class="documentableName ">isNull</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">Boolean</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Tests for null.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Tests for null.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#isNull-fffffd1b">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="nonEmpty-0" data-f-inherited="YamlCollection">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#nonEmpty-0" t="n" class="documentableName ">nonEmpty</a>: <span data-unresolved-link="" t="t">Boolean</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Tests for non-empty.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Tests for non-empty.</p> 
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlCollection.html#nonEmpty-0">YamlCollection</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="read-d34" data-f-inherited="YamlSequence">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#read-d34" t="n" class="documentableName ">read</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>)(<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>]): <span data-unresolved-link="" t="t">T</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads constructed data.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads constructed data.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.IndexOutOfBoundsException</span> 
+                 <p>if index is out of bounds</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlSequence.html#read-d34">YamlSequence</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="read-bb4" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#read-bb4" t="n" class="documentableName ">read</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>)(<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>]): <span data-unresolved-link="" t="t">T</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads constructed data.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads constructed data.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               constructor
+              </dt>
+              <dd class="body-medium">
+               <p>data constructor</p> 
+              </dd>
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Throws
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <span data-unresolved-link="">java.lang.NullPointerException</span> 
+                 <p>if node is null</p> 
+                </div>
+                <div>
+                 <span data-unresolved-link="">java.util.NoSuchElementException</span> 
+                 <p>if key does not exist</p> 
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#read-bb4">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="readOption-fffff0de" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#readOption-fffff0de" t="n" class="documentableName ">readOption</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>)(<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>]): <span data-unresolved-link="" t="t">Option</span>[<span data-unresolved-link="" t="t">T</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Optionally reads constructed data.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Optionally reads constructed data.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               constructor
+              </dt>
+              <dd class="body-medium">
+               <p>data constructor</p> 
+              </dd>
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Returns
+              </dt>
+              <dd class="body-medium">
+               <p><code>Some</code> constructed data, or <code>None</code> if key does not exists or its associated node is null</p> 
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#readOption-fffff0de">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="readOrElse-fffff258" data-f-inherited="YamlMapping">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="YamlCollectionFacade.html#readOrElse-fffff258" t="n" class="documentableName ">readOrElse</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>, <span t="k"></span><span data-unresolved-link="" t="n">default</span>: <span t="k">=&gt; </span><span t="t">T</span>)(<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>]): <span data-unresolved-link="" t="t">T</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads constructed data or returns default value.</p> 
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads constructed data or returns default value.</p> 
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               constructor
+              </dt>
+              <dd class="body-medium">
+               <p>data constructor</p> 
+              </dd>
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p> 
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Returns
+              </dt>
+              <dd class="body-medium">
+               <p>constructed data, or default value if key does not exist or its associated node is null</p> 
+              </dd>
+              <dt class="body-small">
+               Inherited from:
+              </dt>
+              <dd class="body-medium">
+               <a href="YamlMapping.html#readOrElse-fffff258">YamlMapping</a>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+</section></div><div id="toc" class="body-small"><div id="toc-container"><span class="toc-title h200">In this article</span><nav class="toc-nav"><ul class="toc-list"><li><a href="#attributes">Attributes</a></li><li><a href="#members-list">Members list</a><ul><li><a href="#Value-members">Value members</a><ul><li><a href="#Concrete-methods">Concrete methods</a></li><li><a href="#Inherited-methods">Inherited methods</a></li></ul></li></ul></li></ul></nav></div></div></div><div id="footer" class="body-small mobile-footer"><div class="left-container">Generated with</div><div class="right-container"><a href="https://github.com/lampepfl/dotty"><button class="icon-button gh"></button></a><a href="https://twitter.com/scala_lang"><button class="icon-button twitter"></button></a><a href="https://discord.com/invite/scala"><button class="icon-button discord"></button></a><a href="https://gitter.im/scala/scala"><button class="icon-button gitter"></button></a><div class="text"></div></div><div class="text-mobile"></div></div></div></div></body></html>
