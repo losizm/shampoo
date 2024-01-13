@@ -15,7 +15,6 @@
  */
 package shampoo.yaml
 
-import java.math.BigDecimal as JBigDecimal
 import java.time.*
 import java.time.temporal.Temporal
 

@@ -22,3 +22,4 @@ private type JInteger    = java.lang.Integer
 private type JLong       = java.lang.Long
 private type JDouble     = java.lang.Double
 private type JBigInteger = java.math.BigInteger
+private type JBigDecimal = java.math.BigDecimal
