@@ -22,7 +22,7 @@ import java.time.temporal.Temporal
 
 import scala.jdk.javaapi.CollectionConverters.asScala
 
-private transparent trait YamlValues:
+private object YamlValues:
   def wrap(value: AnyRef): YamlNode =
     value match
       case null                  => YamlNull
@@ -64,6 +64,3 @@ private transparent trait YamlValues:
 
   def valueOf(temporal: Temporal): Temporal =
     temporal
-
-
-private object YamlValues extends YamlValues

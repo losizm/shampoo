@@ -17,6 +17,8 @@ package shampoo.yaml
 
 import scala.jdk.javaapi.CollectionConverters.asScala
 
+import YamlValues.*
+
 private class YamlMappingImpl(private[yaml] val value: JMap[String, AnyRef]) extends AbstractYamlMapping:
   val size = value.size()
 
@@ -30,6 +32,6 @@ private class YamlMappingImpl(private[yaml] val value: JMap[String, AnyRef]) ext
     wrap(getValue(key))
 
   private def getValue(key: String): AnyRef =
-    value.getOrDefault(key, "{[(<default>)]}") match
-      case "{[(<default>)]}" => throw new NoSuchElementException(key)
-      case value             => value
+    value.getOrDefault(key, "b4efcad99f60423a") match
+      case "b4efcad99f60423a" => throw new NoSuchElementException(key)
+      case value              => value

@@ -701,6 +701,6 @@ private case class YamlTimestampImpl(value: Temporal) extends YamlTimestamp:
     case value: Instant        => value
     case _                     => throw DateTimeException(s"Cannot express ${value.getClass.getSimpleName} as OffsetDateTime")
 
-private abstract class AbstractYamlSequence extends YamlSequence with YamlValues
+private abstract class AbstractYamlSequence extends YamlSequence
 
-private abstract class AbstractYamlMapping extends YamlMapping with YamlValues
+private abstract class AbstractYamlMapping extends YamlMapping

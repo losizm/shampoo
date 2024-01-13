@@ -17,6 +17,8 @@ package shampoo.yaml
 
 import scala.jdk.javaapi.CollectionConverters.asScala
 
+import YamlValues.*
+
 private class YamlSequenceImpl(private[yaml] val value: JList[AnyRef]) extends AbstractYamlSequence:
   val size = value.size()
 
