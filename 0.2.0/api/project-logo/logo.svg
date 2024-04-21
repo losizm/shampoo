@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright 2021 Carlos Conyers
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xml:space="preserve"
+     x="0"
+     y="0"
+     width="64"
+     height="64"
+     viewBox="0 0 100 100">
+  <title>shampoo</title>
+
+  <path id="shampoo-head"
+    d="M 38,22 Q 25,10 20,10 Q -10,30 18,55 Q 50,130 82,55 Q 110,30 80,10 Q 75,10 62,22 Q 50,18 38,22 Z"
+    style="stroke: #ddd; stroke-width: 4; fill: #751;"/>
+
+  <g id="shampoo-spots" style="stroke: none; fill: #282828;">
+    <ellipse id="shampoo-spot-1-left"   cx="47" cy="30" rx="1"    ry="1.5"/>
+    <ellipse id="shampoo-spot-1-right"  cx="53" cy="30" rx="1"    ry="1.5"/>
+    <ellipse id="shampoo-spot-2-left"   cx="47" cy="34" rx="1"    ry="1.5"/>
+    <ellipse id="shampoo-spot-2-right"  cx="53" cy="34" rx="1"    ry="1.5"/>
+    <ellipse id="shampoo-spot-3-left"   cx="47" cy="38" rx="1"    ry="1.5"/>
+    <ellipse id="shampoo-spot-3-right"  cx="53" cy="38" rx="1"    ry="1.5"/>
+    <ellipse id="shampoo-spot-4-left"   cx="41" cy="38" rx="1.5"  ry="2"/>
+    <ellipse id="shampoo-spot-4-right"  cx="59" cy="38" rx="1.5"  ry="2"/>
+    <ellipse id="shampoo-spot-5-left"   cx="43" cy="43" rx="2.5"  ry="2"/>
+    <ellipse id="shampoo-spot-5-right"  cx="57" cy="43" rx="2.5"  ry="2"/>
+    <ellipse id="shampoo-spot-6-left"   cx="46" cy="48" rx="2.25" ry="2"/>
+    <ellipse id="shampoo-spot-6-right"  cx="54" cy="48" rx="2.25" ry="2"/>
+    <ellipse id="shampoo-spot-7-left"   cx="40" cy="48" rx="2"    ry="1.75"/>
+    <ellipse id="shampoo-spot-7-right"  cx="60" cy="48" rx="2"    ry="1.75"/>
+    <ellipse id="shampoo-spot-8-left"   cx="35" cy="47" rx="2"    ry="1.5"/>
+    <ellipse id="shampoo-spot-8-right"  cx="65" cy="47" rx="2"    ry="1.5"/>
+    <ellipse id="shampoo-spot-9-left"   cx="37" cy="70" rx="2"    ry="1.25" transform="rotate(30,37,70)"/>
+    <ellipse id="shampoo-spot-9-right"  cx="63" cy="70" rx="2"    ry="1.25" transform="rotate(-30,63,70)"/>
+    <ellipse id="shampoo-spot-10-left"  cx="41" cy="76" rx="1.25" ry="1.5"  transform="rotate(-30,41,76)"/>
+    <ellipse id="shampoo-spot-10-right" cx="59" cy="76" rx="1.25" ry="1.5"  transform="rotate(30,59,76)"/>
+  </g>
+
+  <g id="shampoo-ears-inner" style="stroke: #282828; stroke-width: 4; fill: #333;">
+    <path id="shampoo-ear-inner-left"  d="M 27,32 L 20,22 Q  7,30 20,42 Z"/>
+    <path id="shampoo-ear-inner-right" d="M 73,32 L 80,22 Q 93,30 80,42 Z"/>
+  </g>
+  
+  <g id="shampoo-eyes-outline" style="stroke: none; fill: #282828;">
+    <ellipse id="shampoo-eye-outline-left"  cx="38" cy="55.5" rx="9" ry="3" transform="rotate(15,38,55)"/>
+    <ellipse id="shampoo-eye-outline-right" cx="62" cy="55.5" rx="9" ry="3" transform="rotate(-15,62,55)"/>
+  </g>
+
+  <g id="shampoo-eyes" style="stroke: none; fill: #4d6;">
+    <ellipse id="shampoo-eye-left"  cx="38" cy="55" rx="6" ry="2" transform="rotate(15,38,55)"/>
+    <ellipse id="shampoo-eye-right" cx="62" cy="55" rx="6" ry="2" transform="rotate(-15,62,55)"/>
+  </g>
+
+  <path id="shampoo-nose" d="M 43,70 Q 50,78 57,70 Q 50,65 43,70 Z" style="stroke: none; fill: #282828;"/>
+
+  <g id="shampoo-mouth">
+    <path id="shampoo-cleft" d="M 50,74 L 50,85" style="stroke: #333; stroke-width: 2; fill: none;"/>
+    <path id="shampoo-lips" d="M 42,82 Q 50,90 58,82 Z" style="stroke: none; fill: #333;"/>
+  </g>
+</svg>
