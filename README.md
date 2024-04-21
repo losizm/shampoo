@@ -15,10 +15,11 @@ The underlying YAML processor is provided by [SnakeYaml](https://bitbucket.org/s
 so it'll be added transitively.
 
 ## Lather Up !!!
-Reading and writing YAML are powered by the `YamlConstructor` and `YamlRepresenter`
-traits. They convert values to and from YAML, and library-provided implementations
-are included for working with standard types like `String`, `Int`, etc. You must
-define custom implementations for converting to and from your classes.
+Reading and writing are powered by the `YamlConstructor` and `YamlRepresenter`
+traits. They convert values to and from YAML, and library-provided
+implementations are available for handling standard types like `String`, `Int`,
+etc. You must define custom implementations for converting to and from your
+classes.
 
 ```scala
 import scala.language.implicitConversions

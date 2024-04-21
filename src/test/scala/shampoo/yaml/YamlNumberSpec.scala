@@ -15,9 +15,7 @@
  */
 package shampoo.yaml
 
-import java.time.*
-
-import scala.collection.immutable.{ ListMap, TreeMap }
+import scala.collection.immutable.ListMap
 
 class YamlNumberSpec extends org.scalatest.flatspec.AnyFlatSpec:
   it should "construct and represent YAML containing ints" in {

@@ -29,10 +29,10 @@ package shampoo.yaml
  * given YamlRepresenter[User] =
  *    user => Yaml.map("id" -> user.id, "name" -> user.name)
  *
- * val lupita = User(1000, "lupita")
+ * val user = User(1000, "lupita")
  * 
  * // Represent and verify
- * val yaml = Yaml.toYaml(lupita)
+ * val yaml = Yaml.toYaml(user)
  * assert(yaml.getInt("id") == 1000)
  * assert(yaml.getString("name") == "lupita")
  * }}}

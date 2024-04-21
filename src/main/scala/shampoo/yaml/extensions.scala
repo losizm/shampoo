@@ -42,8 +42,7 @@ extension (yaml: YamlNode)
     yaml.asInstanceOf[YamlSequence](index)
 
   /**
-   * Collects values with given mapping key while traversing nested mappings and
-   * sequences.
+   * Collects values with given key in traversed collections.
    *
    * {{{
    * import shampoo.yaml.{ Yaml, \\, given }
@@ -75,4 +74,4 @@ extension (yaml: YamlNode)
         yaml.toMap.values.flatMap(_ \\ key).toSeq
 
       case yaml: YamlSequence => yaml.toSeq.flatMap(_ \\ key).toSeq
-      case _               => Nil
+      case _                  => Nil

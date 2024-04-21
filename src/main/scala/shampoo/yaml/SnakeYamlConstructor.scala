@@ -25,7 +25,7 @@ import org.yaml.snakeyaml.constructor.Constructor
 import org.yaml.snakeyaml.nodes.{ Node, ScalarNode, Tag }
 
 private class SnakeYamlConstructor(loaderOptions: LoaderOptions) extends Constructor(loaderOptions):
-  // Constructs float and timestamp only
+  // Overrides float and timestamp constructs
   override def constructObject(node: Node): AnyRef =
     node.getTag match
       case Tag.FLOAT     => getNumber(node.asInstanceOf)
