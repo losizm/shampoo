@@ -17,8 +17,6 @@ package shampoo.yaml
 
 import java.lang.{ Boolean as JBoolean, Double as JDouble, Integer as JInteger, Long as JLong }
 import java.math.BigDecimal as JBigDecimal
-import java.time.*
-import java.time.temporal.Temporal
 
 import scala.jdk.javaapi.CollectionConverters.asScala
 
@@ -30,13 +28,10 @@ private object YamlValues:
       case value: JBoolean       => YamlBooleanImpl(value)
       case value: JInteger       => YamlNumberImpl(BigDecimal(value))
       case value: JLong          => YamlNumberImpl(BigDecimal(value))
+      case value: JFloat         => YamlNumberImpl(BigDecimal(value.doubleValue))
       case value: JDouble        => YamlNumberImpl(BigDecimal(value))
       case value: JBigInteger    => YamlNumberImpl(BigDecimal(value))
       case value: JBigDecimal    => YamlNumberImpl(BigDecimal(value))
-      case value: LocalDate      => YamlTimestampImpl(value)
-      case value: LocalDateTime  => YamlTimestampImpl(value)
-      case value: OffsetDateTime => YamlTimestampImpl(value)
-      case value: Instant        => YamlTimestampImpl(value)
       case value: JList[?]       => YamlSequenceImpl(value.asInstanceOf)
       case value: JMap[?, ?]     => YamlMappingImpl(value.asInstanceOf)
       case _                     => throw YamlException(s"Unsupported representation: ${value.getClass.getName}")
@@ -47,7 +42,6 @@ private object YamlValues:
       case node: YamlString     => node.value
       case node: YamlBoolean    => valueOf(node.value)
       case node: YamlNumber     => valueOf(node.value)
-      case node: YamlTimestamp  => valueOf(node.value)
       case node: YamlCollection => node.value
 
   def valueOf(boolean: Boolean): JBoolean = JBoolean.valueOf(boolean)
@@ -61,6 +55,3 @@ private object YamlValues:
     bigDecimal.isWhole match
       case true  => valueOf(bigDecimal.toBigInt)
       case false => bigDecimal.bigDecimal
-
-  def valueOf(temporal: Temporal): Temporal =
-    temporal

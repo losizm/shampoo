@@ -15,9 +15,6 @@
  */
 package shampoo.yaml
 
-import java.time.*
-import java.time.temporal.Temporal
-
 /** Defines YAML node. */
 sealed trait YamlNode:
   /**
@@ -144,55 +141,6 @@ object YamlNumber:
   def apply(value: BigDecimal): YamlNumber =
     YamlNumberImpl(value)
 
-/** Defines YAML timestamp. */
-sealed trait YamlTimestamp extends YamlScalar:
-  /** Gets timestamp as `LocalDate`. */
-  def toLocalDate: LocalDate
-
-  /** Gets timestamp as `LocalDateTime`. */
-  def toLocalDateTime: LocalDateTime
-
-  /** Gets timestamp as `OffsetDateTime`. */
-  def toOffsetDateTime: OffsetDateTime
-
-  /** Gets timestamp as `Instant`. */
-  def toInstant: Instant
-
-  private[yaml] def value: Temporal
-
-/** Provides YAML timestamp constructors. */
-object YamlTimestamp:
-  /**
-   * Constructs YAML timestamp.
-   *
-   * @param value local date
-   */
-  def apply(value: LocalDate): YamlTimestamp =
-    YamlTimestampImpl(value)
-
-  /**
-   * Constructs YAML timestamp.
-   *
-   * @param value local date-time
-   */
-  def apply(value: LocalDateTime): YamlTimestamp =
-    YamlTimestampImpl(value)
-
-  /**
-   * Constructs YAML timestamp.
-   *
-   * @param value offset date-time
-   */
-  def apply(value: OffsetDateTime): YamlTimestamp =
-    YamlTimestampImpl(value)
-
-  /**
-   * Constructs YAML timestamp.
-   *
-   * @param value instant
-   */
-  def apply(value: Instant): YamlTimestamp =
-    YamlTimestampImpl(value)
 /** Defines YAML collection. */
 sealed trait YamlCollection extends YamlNode:
   /** Gets collection size. */
@@ -348,50 +296,6 @@ sealed trait YamlMapping extends YamlCollection:
    * @throws java.lang.NullPointerException if node is null
    */
   def getBigDecimal(key: String): BigDecimal =
-    read(key)
-
-  /**
-   * Gets node as `LocalDate`.
-   *
-   * @param key mapping key
-   *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
-   */
-  def getLocalDate(key: String): LocalDate =
-    read(key)
-
-  /**
-   * Gets node as `LocalDateTime`.
-   *
-   * @param key mapping key
-   *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
-   */
-  def getLocalDateTime(key: String): LocalDateTime =
-    read(key)
-
-  /**
-   * Gets node as `OffsetDateTime`.
-   *
-   * @param key mapping key
-   *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
-   */
-  def getOffsetDateTime(key: String): OffsetDateTime =
-    read(key)
-
-  /**
-   * Gets node as `Instant`.
-   *
-   * @param key mapping key
-   *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
-   */
-  def getInstant(key: String): Instant =
     read(key)
 
   /**
@@ -571,50 +475,6 @@ sealed trait YamlSequence extends YamlCollection:
     read(index)
 
   /**
-   * Gets node as `LocalDate`.
-   *
-   * @param index sequence index
-   *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
-   */
-  def getLocalDate(index: Int): LocalDate =
-    read(index)
-
-  /**
-   * Gets node as `LocalDateTime`.
-   *
-   * @param index sequence index
-   *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
-   */
-  def getLocalDateTime(index: Int): LocalDateTime =
-    read(index)
-
-  /**
-   * Gets node as `OffsetDateTime`.
-   *
-   * @param index sequence index
-   *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
-   */
-  def getOffsetDateTime(index: Int): OffsetDateTime =
-    read(index)
-
-  /**
-   * Gets node as `Instant`.
-   *
-   * @param index sequence index
-   *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
-   */
-  def getInstant(index: Int): Instant =
-    read(index)
-
-  /**
    * Gets node as `YamlMapping`.
    *
    * @param index sequence index
@@ -680,26 +540,6 @@ private case class YamlNumberImpl(value: BigDecimal) extends YamlNumber:
   lazy val toDouble     = value.toDouble
   lazy val toBigInt     = value.toBigIntExact.getOrElse(throw ArithmeticException("Rounding necessary"))
   lazy val toBigDecimal = value
-
-private case class YamlTimestampImpl(value: Temporal) extends YamlTimestamp:
-  lazy val toLocalDate = value match
-    case value: LocalDate => value
-    case _                => throw DateTimeException(s"Truncation required to express ${value.getClass.getSimpleName} as LocalDate")
-
-  lazy val toLocalDateTime = value match
-    case value: LocalDateTime => value
-    case _: LocalDate         => throw DateTimeException(s"Time required to express LocalDate as LocalDateTime")
-    case _                    => throw DateTimeException(s"Truncation required to express ${value.getClass.getSimpleName} as LocalDateTime")
-
-  lazy val toOffsetDateTime = value match
-    case value: OffsetDateTime => value
-    case value: Instant        => value.atOffset(ZoneOffset.UTC)
-    case _                     => throw DateTimeException(s"Cannot express ${value.getClass.getSimpleName} as OffsetDateTime")
-
-  lazy val toInstant = value match
-    case value: OffsetDateTime => value.toInstant
-    case value: Instant        => value
-    case _                     => throw DateTimeException(s"Cannot express ${value.getClass.getSimpleName} as OffsetDateTime")
 
 private abstract class AbstractYamlSequence extends YamlSequence
 

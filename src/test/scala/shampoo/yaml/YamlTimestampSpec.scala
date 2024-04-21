@@ -38,7 +38,7 @@ class YamlTimestampSpec extends org.scalatest.flatspec.AnyFlatSpec:
     info(s"\n${Yaml.dump(yaml)}")
   }
 
-  it should "construct and represent YAML containing date-times" in {
+  it should "construct and represent YAML containing datetimes" in {
     val yaml = Yaml.load("""
       foo: 1983-03-01T12:22:11
       bar: 1954-12-28T13:33:22
@@ -56,7 +56,7 @@ class YamlTimestampSpec extends org.scalatest.flatspec.AnyFlatSpec:
     info(s"\n${Yaml.dump(yaml)}")
   }
 
-  it should "construct and represent YAML containing offset date-times" in {
+  it should "construct and represent YAML containing datetimes with offset" in {
     val yaml = Yaml.load("""
       foo: 1983-03-01T12:22:11-05:00
       bar: 1954-12-28T13:33:22-06:00
@@ -93,6 +93,8 @@ class YamlTimestampSpec extends org.scalatest.flatspec.AnyFlatSpec:
   }
 
   it should "build YAML containing mixed timestamps (1)" in {
+    import scala.language.implicitConversions
+
     val yaml = YamlMappingBuilder()
       .add("foo", LocalDate.parse("1983-03-01"))
       .add("bar", LocalDateTime.parse("1954-12-28T13:33:22"))
@@ -136,51 +138,51 @@ class YamlTimestampSpec extends org.scalatest.flatspec.AnyFlatSpec:
     assert(yaml.size == 5)
     assert(yaml.keys == Set("foo", "bar", "baz", "qux", "quux"))
 
-    assert(yaml("foo") == YamlTimestamp(LocalDate.parse("1983-03-01")))
-    assert(yaml.getLocalDate("foo") == LocalDate.parse("1983-03-01"))
-    assertThrows[DateTimeException](yaml.getLocalDateTime("foo"))
-    assertThrows[DateTimeException](yaml.getOffsetDateTime("foo"))
-    assertThrows[DateTimeException](yaml.getInstant("foo"))
+    assert(yaml("foo") == YamlString("1983-03-01"))
+    assert(yaml.read[LocalDate]("foo") == LocalDate.parse("1983-03-01"))
+    assertThrows[DateTimeException](yaml.read[LocalDateTime]("foo"))
+    assertThrows[DateTimeException](yaml.read[OffsetDateTime]("foo"))
+    assertThrows[DateTimeException](yaml.read[Instant]("foo"))
 
-    assert(yaml("bar") == YamlTimestamp(LocalDateTime.parse("1954-12-28T13:33:22")))
-    assertThrows[DateTimeException](yaml.getLocalDate("bar"))
-    assertThrows[DateTimeException](yaml.getLocalDate("bar"))
-    assert(yaml.getLocalDateTime("bar") == LocalDateTime.parse("1954-12-28T13:33:22"))
-    assertThrows[DateTimeException](yaml.getOffsetDateTime("bar"))
-    assertThrows[DateTimeException](yaml.getInstant("bar"))
+    assert(yaml("bar") == YamlString("1954-12-28T13:33:22"))
+    assertThrows[DateTimeException](yaml.read[LocalDate]("bar"))
+    assertThrows[DateTimeException](yaml.read[LocalDate]("bar"))
+    assert(yaml.read[LocalDateTime]("bar") == LocalDateTime.parse("1954-12-28T13:33:22"))
+    assertThrows[DateTimeException](yaml.read[OffsetDateTime]("bar"))
+    assertThrows[DateTimeException](yaml.read[Instant]("bar"))
 
-    assert(yaml("baz") == YamlTimestamp(OffsetDateTime.parse("1962-07-31T14:44:33+06:30")))
-    assertThrows[DateTimeException](yaml.getLocalDate("baz"))
-    assertThrows[DateTimeException](yaml.getLocalDateTime("baz"))
-    assert(yaml.getOffsetDateTime("baz") == OffsetDateTime.parse("1962-07-31T14:44:33+06:30"))
-    assert(yaml.getInstant("baz") == Instant.parse("1962-07-31T08:14:33Z"))
+    assert(yaml("baz") == YamlString("1962-07-31T14:44:33+06:30"))
+    assertThrows[DateTimeException](yaml.read[LocalDate]("baz"))
+    assertThrows[DateTimeException](yaml.read[LocalDateTime]("baz"))
+    assert(yaml.read[OffsetDateTime]("baz") == OffsetDateTime.parse("1962-07-31T14:44:33+06:30"))
+    assertThrows[DateTimeException](yaml.read[Instant]("baz"))
 
-    assert(yaml("qux") == YamlTimestamp(Instant.parse("1977-01-31T15:55:44Z")))
-    assertThrows[DateTimeException](yaml.getLocalDate("qux"))
-    assertThrows[DateTimeException](yaml.getLocalDateTime("qux"))
-    assert(yaml.getOffsetDateTime("qux") == OffsetDateTime.parse("1977-01-31T15:55:44+00:00"))
-    assert(yaml.getInstant("qux") == Instant.parse("1977-01-31T15:55:44Z"))
+    assert(yaml("qux") == YamlString("1977-01-31T15:55:44Z"))
+    assertThrows[DateTimeException](yaml.read[LocalDate]("qux"))
+    assertThrows[DateTimeException](yaml.read[LocalDateTime]("qux"))
+    assert(yaml.read[OffsetDateTime]("qux") == OffsetDateTime.parse("1977-01-31T15:55:44Z"))
+    assert(yaml.read[Instant]("qux") == Instant.parse("1977-01-31T15:55:44Z"))
 
-    assert(yaml("quux")(0) == YamlTimestamp(LocalDate.parse("1983-03-01")))
-    assert(yaml("quux").getLocalDate(0) == LocalDate.parse("1983-03-01"))
-    assertThrows[DateTimeException](yaml("quux").getLocalDateTime(0))
-    assertThrows[DateTimeException](yaml("quux").getOffsetDateTime(0))
-    assertThrows[DateTimeException](yaml("quux").getInstant(0))
+    assert(yaml("quux")(0) == YamlString("1983-03-01"))
+    assert(yaml("quux").read[LocalDate](0) == LocalDate.parse("1983-03-01"))
+    assertThrows[DateTimeException](yaml("quux").read[LocalDateTime](0))
+    assertThrows[DateTimeException](yaml("quux").read[OffsetDateTime](0))
+    assertThrows[DateTimeException](yaml("quux").read[Instant](0))
 
-    assert(yaml("quux")(1) == YamlTimestamp(LocalDateTime.parse("1954-12-28T13:33:22")))
-    assertThrows[DateTimeException](yaml("quux").getLocalDate(1))
-    assert(yaml("quux").getLocalDateTime(1) == LocalDateTime.parse("1954-12-28T13:33:22"))
-    assertThrows[DateTimeException](yaml("quux").getOffsetDateTime(1))
-    assertThrows[DateTimeException](yaml("quux").getInstant(1))
+    assert(yaml("quux")(1) == YamlString("1954-12-28T13:33:22"))
+    assertThrows[DateTimeException](yaml("quux").read[LocalDate](1))
+    assert(yaml("quux").read[LocalDateTime](1) == LocalDateTime.parse("1954-12-28T13:33:22"))
+    assertThrows[DateTimeException](yaml("quux").read[OffsetDateTime](1))
+    assertThrows[DateTimeException](yaml("quux").read[Instant](1))
 
-    assert(yaml("quux")(2) == YamlTimestamp(OffsetDateTime.parse("1962-07-31T14:44:33+06:30")))
-    assertThrows[DateTimeException](yaml("quux").getLocalDate(2))
-    assertThrows[DateTimeException](yaml("quux").getLocalDateTime(2))
-    assert(yaml("quux").getOffsetDateTime(2) == OffsetDateTime.parse("1962-07-31T14:44:33+06:30"))
-    assert(yaml("quux").getInstant(2) == Instant.parse("1962-07-31T08:14:33Z"))
+    assert(yaml("quux")(2) == YamlString("1962-07-31T14:44:33+06:30"))
+    assertThrows[DateTimeException](yaml("quux").read[LocalDate](2))
+    assertThrows[DateTimeException](yaml("quux").read[LocalDateTime](2))
+    assert(yaml("quux").read[OffsetDateTime](2) == OffsetDateTime.parse("1962-07-31T14:44:33+06:30"))
+    assertThrows[DateTimeException](yaml("quux").read[Instant](2))
 
-    assert(yaml("quux")(3) == YamlTimestamp(Instant.parse("1977-01-31T15:55:44Z")))
-    assertThrows[DateTimeException](yaml("quux").getLocalDate(3))
-    assertThrows[DateTimeException](yaml("quux").getLocalDateTime(3))
-    assert(yaml("quux").getOffsetDateTime(3) == OffsetDateTime.parse("1977-01-31T15:55:44+00:00"))
-    assert(yaml("quux").getInstant(3) == Instant.parse("1977-01-31T15:55:44Z"))
+    assert(yaml("quux")(3) == YamlString("1977-01-31T15:55:44Z"))
+    assertThrows[DateTimeException](yaml("quux").read[LocalDate](3))
+    assertThrows[DateTimeException](yaml("quux").read[LocalDateTime](3))
+    assert(yaml("quux").read[OffsetDateTime](3) == OffsetDateTime.parse("1977-01-31T15:55:44+00:00"))
+    assert(yaml("quux").read[Instant](3) == Instant.parse("1977-01-31T15:55:44Z"))

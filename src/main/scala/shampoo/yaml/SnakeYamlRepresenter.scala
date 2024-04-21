@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Carlos Conyers
+ * Copyright 2024 Carlos Conyers
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,44 +15,24 @@
  */
 package shampoo.yaml
 
-import java.time.*
-import java.time.temporal.Temporal
+import java.util.Optional
 
-import org.yaml.snakeyaml.DumperOptions
-import org.yaml.snakeyaml.nodes.{ Node, ScalarNode, Tag }
-import org.yaml.snakeyaml.representer.{ Represent, Representer }
+import org.snakeyaml.engine.v2.api.{ DumpSettings, RepresentToNode }
+import org.snakeyaml.engine.v2.common.ScalarStyle
+import org.snakeyaml.engine.v2.nodes.{ ScalarNode, Tag }
+import org.snakeyaml.engine.v2.representer.StandardRepresenter
 
-private class SnakeYamlRepresenter(dumperOptions: DumperOptions) extends Representer(dumperOptions):
+private class SnakeYamlRepresenter(val dumpSettings: DumpSettings) extends StandardRepresenter(dumpSettings):
   // Represents float only
-  private object FloatRepresenter extends Represent:
+  private object FloatRepresenter extends RepresentToNode:
     def representData(data: AnyRef): ScalarNode =
       ScalarNode(
-        Tag.FLOAT,
-        data.asInstanceOf[JBigDecimal].toString,
-        null, // Omit start mark
-        null, // Omit end mark
-        DumperOptions.ScalarStyle.PLAIN
-      )
-
-  // Represents timestamp only
-  private object TimestampRepresenter extends Represent:
-    def representData(data: AnyRef): ScalarNode =
-      ScalarNode(
-        Tag.TIMESTAMP,
-        data.asInstanceOf[Temporal].toString,
-        null, // Omit start mark
-        null, // Omit end mark
-        DumperOptions.ScalarStyle.PLAIN
+        Tag.FLOAT,                               // tag
+        true,                                    // resolved
+        data.asInstanceOf[JBigDecimal].toString, // value
+        ScalarStyle.PLAIN,                       // style
+        Optional.empty(),                        // startMark
+        Optional.empty()                         // endMark
       )
 
   representers.put(classOf[JBigDecimal], FloatRepresenter)
-  representers.put(classOf[Instant], TimestampRepresenter)
-  representers.put(classOf[LocalDate], TimestampRepresenter)
-  representers.put(classOf[LocalDateTime], TimestampRepresenter)
-  representers.put(classOf[OffsetDateTime], TimestampRepresenter)
-
-  addClassTag(classOf[JBigDecimal], Tag.FLOAT)
-  addClassTag(classOf[Instant], Tag.TIMESTAMP)
-  addClassTag(classOf[LocalDate], Tag.TIMESTAMP)
-  addClassTag(classOf[LocalDateTime], Tag.TIMESTAMP)
-  addClassTag(classOf[OffsetDateTime], Tag.TIMESTAMP)

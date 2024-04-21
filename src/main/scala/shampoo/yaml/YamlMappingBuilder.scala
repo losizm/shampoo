@@ -15,7 +15,6 @@
  */
 package shampoo.yaml
 
-import java.time.*
 import java.util.LinkedHashMap as JHashMap
 
 import YamlValues.*
@@ -131,46 +130,6 @@ class YamlMappingBuilder:
    * @return this builder
    */
   def add(key: String, value: BigDecimal): this.type =
-    if key == null then throw NullPointerException()
-    node.put(key, valueOf(value))
-    this
-
-  /**
-   * Adds key-value pair to mapping.
-   *
-   * @return this builder
-   */
-  def add(key: String, value: LocalDate): this.type =
-    if key == null then throw NullPointerException()
-    node.put(key, valueOf(value))
-    this
-
-  /**
-   * Adds key-value pair to mapping.
-   *
-   * @return this builder
-   */
-  def add(key: String, value: LocalDateTime): this.type =
-    if key == null then throw NullPointerException()
-    node.put(key, valueOf(value))
-    this
-
-  /**
-   * Adds key-value pair to mapping.
-   *
-   * @return this builder
-   */
-  def add(key: String, value: OffsetDateTime): this.type =
-    if key == null then throw NullPointerException()
-    node.put(key, valueOf(value))
-    this
-
-  /**
-   * Adds key-value pair to mapping.
-   *
-   * @return this builder
-   */
-  def add(key: String, value: Instant): this.type =
     if key == null then throw NullPointerException()
     node.put(key, valueOf(value))
     this

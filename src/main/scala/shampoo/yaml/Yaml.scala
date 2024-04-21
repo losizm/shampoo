@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Carlos Conyers
+ * Copyright 2024 Carlos Conyers
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,6 @@ package shampoo.yaml
 
 import java.io.*
 import java.nio.file.Path
-
-import org.yaml.snakeyaml.{ DumperOptions, LoaderOptions, Yaml as SnakeYaml }
 
 /**
  * Provides YAML utilities.
@@ -51,17 +49,7 @@ import org.yaml.snakeyaml.{ DumperOptions, LoaderOptions, Yaml as SnakeYaml }
  */
 object Yaml:
   private val snakeYaml = new ThreadLocal[SnakeYaml]:
-    override def initialValue =
-      val loadOpts = LoaderOptions()
-      loadOpts.setProcessComments(false)
-      loadOpts.setAllowDuplicateKeys(false)
-      loadOpts.setAllowRecursiveKeys(false)
-
-      val dumpOpts = DumperOptions()
-      dumpOpts.setIndent(2)
-      dumpOpts.setDefaultScalarStyle(DumperOptions.ScalarStyle.PLAIN)
-      dumpOpts.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK)
-      SnakeYaml(SnakeYamlConstructor(loadOpts), SnakeYamlRepresenter(dumpOpts))
+    override def initialValue = SnakeYaml()
 
   /** Creates YAML mapping with supplied key-node pairs.  */
   def map(pairs: (String, YamlNode)*): YamlMapping =
@@ -98,11 +86,7 @@ object Yaml:
    * @throws YamlException if YAML cannot be loaded from input
    */
   def load(input: Reader): YamlNode =
-    try
-      val node = snakeYaml.get().load[AnyRef](input)
-      YamlValues.wrap(node)
-    catch case cause =>
-      throw YamlException("Cannot load YAML from input", cause)
+    snakeYaml.get.load(input)
 
   /**
    * Loads YAML mapping.
@@ -137,8 +121,7 @@ object Yaml:
 
   /** Dumps YAML to supplied output. */
   def dump(yaml: YamlNode, output: Writer): Unit =
-    val node = snakeYaml.get().represent(YamlValues.unwrap(yaml))
-    snakeYaml.get().serialize(node, output)
+    snakeYaml.get.dump(yaml, output)
 
   /** Dumps YAML to supplied output. */
   def dump(yaml: YamlNode, output: OutputStream): Unit =

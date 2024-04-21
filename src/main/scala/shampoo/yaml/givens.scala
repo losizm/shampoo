@@ -15,8 +15,6 @@
  */
 package shampoo.yaml
 
-import java.time.{ Instant, LocalDate, LocalDateTime, OffsetDateTime }
-
 import scala.collection.Factory
 import scala.util.{ Failure, Try }
 
@@ -96,26 +94,6 @@ given bigDecimalConstructor: YamlConstructor[BigDecimal] =
   case node: YamlNumber => node.toBigDecimal
   case node             => throw YamlException(s"Not a number: ${node.getClass.getName}")
 
-/** Constructs `LocalDate` from `YamlTimestamp`. */
-given localDateConstructor: YamlConstructor[LocalDate] =
-  case node: YamlTimestamp => node.toLocalDate
-  case node                => throw YamlException(s"Not a timestamp: ${node.getClass.getName}")
-
-/** Constructs `LocalDateTime` from `YamlTimestamp`. */
-given localDateTimeConstructor: YamlConstructor[LocalDateTime] =
-  case node: YamlTimestamp => node.toLocalDateTime
-  case node                => throw YamlException(s"Not a timestamp: ${node.getClass.getName}")
-
-/** Constructs `OffsetDateTime` from `YamlTimestamp`. */
-given offsetDateTimeConstructor: YamlConstructor[OffsetDateTime] =
-  case node: YamlTimestamp => node.toOffsetDateTime
-  case node                => throw YamlException(s"Not a timestamp: ${node.getClass.getName}")
-
-/** Constructs `Instant` from `YamlTimestamp`. */
-given instantConstructor: YamlConstructor[Instant] =
-  case node: YamlTimestamp => node.toInstant
-  case node                => throw YamlException(s"Not a timestamp: ${node.getClass.getName}")
-
 /** Converts `YamlNode` to `Map`. */
 given mapConstructor[T, M[T] <: Map[String, T]](using constructor: YamlConstructor[T])(using factory: Factory[(String, T), M[T]]): YamlConstructor[M[T]] =
   case node: YamlMapping =>
@@ -168,18 +146,6 @@ given bigIntRepresenter: YamlRepresenter[BigInt] = YamlNumber(_)
 
 /** Represents `BigDecimal` to `YamlNumber`. */
 given bigDecimalRepresenter: YamlRepresenter[BigDecimal] = YamlNumber(_)
-
-/** Represents `LocalDate` to `YamlTimestamp`. */
-given localDateRepresenter: YamlRepresenter[LocalDate] = YamlTimestamp(_)
-
-/** Represents `LocalDateTime` to `YamlTimestamp`. */
-given localDateTimeRepresenter: YamlRepresenter[LocalDateTime] = YamlTimestamp(_)
-
-/** Represents `OffsetDateTime` to `YamlTimestamp`. */
-given offsetDateTimeRepresenter: YamlRepresenter[OffsetDateTime] = YamlTimestamp(_)
-
-/** Represents `Instant` to `YamlTimestamp`. */
-given instantRepresenter: YamlRepresenter[Instant] = YamlTimestamp(_)
 
 /** Represents `Map` to `YamlMapping`. */
 given mapRepresenter[T, M[T] <: Map[String, T]](using representer: YamlRepresenter[T]): YamlRepresenter[M[T]] =

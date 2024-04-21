@@ -16,8 +16,8 @@ Compile / doc / scalacOptions := Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.yaml"      %  "snakeyaml" % "2.2"    % Compile,
-  "org.scalatest" %% "scalatest" % "3.2.17" % Test
+  "org.snakeyaml" %  "snakeyaml-engine" % "2.7"    % Compile,
+  "org.scalatest" %% "scalatest"        % "3.2.17" % Test
 )
 
 developers := List(

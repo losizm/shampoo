@@ -15,7 +15,6 @@
  */
 package shampoo.yaml
 
-import java.time.*
 import java.util.LinkedList as JLinkedList
 
 import YamlValues.*
@@ -125,42 +124,6 @@ class YamlSequenceBuilder:
    * @return this builder
    */
   def add(value: BigDecimal): this.type =
-    node.add(valueOf(value))
-    this
-
-  /**
-   * Adds value to sequence.
-   *
-   * @return this builder
-   */
-  def add(value: LocalDate): this.type =
-    node.add(valueOf(value))
-    this
-
-  /**
-   * Adds value to sequence.
-   *
-   * @return this builder
-   */
-  def add(value: LocalDateTime): this.type =
-    node.add(valueOf(value))
-    this
-
-  /**
-   * Adds value to sequence.
-   *
-   * @return this builder
-   */
-  def add(value: OffsetDateTime): this.type =
-    node.add(valueOf(value))
-    this
-
-  /**
-   * Adds value to sequence.
-   *
-   * @return this builder
-   */
-  def add(value: Instant): this.type =
     node.add(valueOf(value))
     this
 

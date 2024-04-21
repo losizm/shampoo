@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Carlos Conyers
+ * Copyright 2024 Carlos Conyers
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,6 @@
  */
 package shampoo.yaml
 
-private type JList[A]    = java.util.List[A]
-private type JMap[K, V]  = java.util.Map[K, V]
-private type JBoolean    = java.lang.Boolean
-private type JInteger    = java.lang.Integer
-private type JLong       = java.lang.Long
-private type JFloat      = java.lang.Float
-private type JDouble     = java.lang.Double
-private type JBigInteger = java.math.BigInteger
-private type JBigDecimal = java.math.BigDecimal
+import java.io.IOException
+
+private class YamlIoException(cause: IOException) extends YamlException(cause.getMessage, cause)

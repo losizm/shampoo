@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Carlos Conyers
+ * Copyright 2024 Carlos Conyers
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,28 +16,17 @@
 package shampoo.yaml
 
 import java.math.BigDecimal as JBigDecimal
-import java.time.*
 
-import scala.util.Try
+import org.snakeyaml.engine.v2.api.LoadSettings
+import org.snakeyaml.engine.v2.constructor.StandardConstructor
+import org.snakeyaml.engine.v2.nodes.{ Node, ScalarNode, Tag }
 
-import org.yaml.snakeyaml.LoaderOptions
-import org.yaml.snakeyaml.constructor.Constructor
-import org.yaml.snakeyaml.nodes.{ Node, ScalarNode, Tag }
-
-private class SnakeYamlConstructor(loaderOptions: LoaderOptions) extends Constructor(loaderOptions):
-  // Overrides float and timestamp constructs
+private class SnakeYamlConstructor(val loadSettings: LoadSettings) extends StandardConstructor(loadSettings):
+  // Overrides float construct
   override def constructObject(node: Node): AnyRef =
     node.getTag match
-      case Tag.FLOAT     => getNumber(node.asInstanceOf)
-      case Tag.TIMESTAMP => getTimestamp(node.asInstanceOf)
-      case _             => super.constructObject(node)
+      case Tag.FLOAT => getNumber(node.asInstanceOf)
+      case _         => super.constructObject(node)
 
   private def getNumber(node: ScalarNode): AnyRef =
     JBigDecimal(node.getValue)
-
-  private def getTimestamp(node: ScalarNode): AnyRef =
-    Try(Instant.parse(node.getValue))
-      .orElse(Try(OffsetDateTime.parse(node.getValue)))
-      .orElse(Try(LocalDateTime.parse(node.getValue)))
-      .orElse(Try(LocalDate.parse(node.getValue)))
-      .get

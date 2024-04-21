@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Carlos Conyers
+ * Copyright 2024 Carlos Conyers
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,21 @@
  */
 package shampoo.yaml
 
-private type JList[A]    = java.util.List[A]
-private type JMap[K, V]  = java.util.Map[K, V]
-private type JBoolean    = java.lang.Boolean
-private type JInteger    = java.lang.Integer
-private type JLong       = java.lang.Long
-private type JFloat      = java.lang.Float
-private type JDouble     = java.lang.Double
-private type JBigInteger = java.math.BigInteger
-private type JBigDecimal = java.math.BigDecimal
+import java.io.{ IOException, Writer }
+import org.snakeyaml.engine.v2.api.StreamDataWriter
+
+private class SnakeYamlWriter(out: Writer) extends StreamDataWriter:
+  override def flush() =
+    tryIO { out.flush() }
+
+  def write(str: String): Unit =
+    tryIO { out.write(str) }
+
+  def write(str: String, off: Int, len: Int): Unit =
+    tryIO { out.write(str, off, len) }
+
+  private def tryIO(io: => Unit): Unit =
+    try
+      io
+    catch case cause: IOException =>
+      throw YamlIoException(cause)
