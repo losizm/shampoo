@@ -124,6 +124,33 @@ class YamlSpec extends org.scalatest.flatspec.AnyFlatSpec:
     verify(copy)
   }
 
+  it should "read optional sequence values" in {
+    val yaml = Yaml.seq(
+      YamlString("abc"),
+      YamlNumber(123),
+      YamlBoolean(true),
+      YamlNull
+    )
+
+    assert { yaml.read[String](0) == "abc" }
+    assert { yaml.readOption[String](0) == Some("abc") }
+    assert { yaml.readOrElse(0, "def") == "abc" }
+
+    assert { yaml.read[Int](1) == 123 }
+    assert { yaml.readOption[Int](1) == Some(123) }
+    assert { yaml.readOrElse(1, 456) == 123 }
+
+    assert { yaml.read[Boolean](2) == true }
+    assert { yaml.readOption[Boolean](2) == Some(true) }
+    assert { yaml.readOrElse(2, false) }
+
+    assert { yaml(3) == YamlNull }
+
+    assertThrows[NullPointerException] { yaml.read[String](3) }
+    assert { yaml.readOption[String](3) == None }
+    assert { yaml.readOrElse(3, "def") == "def" }
+  }
+
   private def verify(yaml: YamlMapping): Unit =
     assert(yaml.nonEmpty)
     assert(yaml.size == 7)

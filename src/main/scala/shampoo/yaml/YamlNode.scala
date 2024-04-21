@@ -509,6 +509,34 @@ sealed trait YamlSequence extends YamlCollection:
       case YamlNull => throw NullPointerException()
       case node     => node.as[T]
 
+  /**
+   * Optionally reads constructed data.
+   *
+   * @param index sequence index
+   * @param constructor data constructor
+   *
+   * @return `Some` constructed data, or `None` if node is null
+   *
+   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
+   */
+  def readOption[T](index: Int)(using constructor: YamlConstructor[T]): Option[T] =
+    apply(index) match
+      case YamlNull => None
+      case node     => Some(node.as[T])
+
+  /**
+   * Reads constructed data or returns default value.
+   *
+   * @param index sequence index
+   * @param constructor data constructor
+   *
+   * @return constructed data, or default value if node is null
+   *
+   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
+   */
+  def readOrElse[T](index: Int, default: => T)(using constructor: YamlConstructor[T]): T =
+    readOption(index).getOrElse(default)
+
 /**
  * Assumes either YAML mapping or YAML sequence.
  *
