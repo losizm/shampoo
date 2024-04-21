@@ -46,5 +46,8 @@ private class SnakeYaml:
       throw YamlException("Cannot load YAML", cause)
 
   def dump(yaml: YamlNode, out: Writer): Unit =
-    val node = representer.represent(YamlValues.unwrap(yaml))
-    dumper.dumpNode(node, SnakeYamlWriter(out))
+    try
+      val node = representer.represent(YamlValues.unwrap(yaml))
+      dumper.dumpNode(node, SnakeYamlWriter(out))
+    catch case cause: Exception =>
+      throw YamlException("Cannot dump YAML", cause)
