@@ -8,10 +8,10 @@ The YAML library for Scala.
 To get started, add **Shampoo** to your project:
 
 ```scala
-libraryDependencies += "com.github.losizm" %% "shampoo" % "0.1.1"
+libraryDependencies += "com.github.losizm" %% "shampoo" % "0.2.0"
 ```
 
-The underlying YAML processor is provided by [SnakeYaml](https://bitbucket.org/snakeyaml/snakeyaml/),
+The underlying YAML processor is provided by [SnakeYAML Engine](https://github.com/snakeyaml/snakeyaml-engine/),
 so it'll be added transitively.
 
 ## Lather Up !!!
