@@ -1,6 +1,6 @@
 organization  := "com.github.losizm"
 name          := "shampoo"
-version       := "0.2.0"
+version       := "0.2.1"
 versionScheme := Some("early-semver")
 description   := "The YAML library for Scala"
 homepage      := Some(url("https://github.com/losizm/shampoo"))
