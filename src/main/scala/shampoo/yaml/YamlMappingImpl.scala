@@ -20,6 +20,8 @@ import scala.jdk.javaapi.CollectionConverters.asScala
 import YamlValues.*
 
 private class YamlMappingImpl(private[yaml] val value: JMap[String, AnyRef]) extends AbstractYamlMapping:
+  private object NoValue
+
   val size = value.size()
 
   lazy val keys  = asScala(value.keySet).toSet
@@ -29,9 +31,11 @@ private class YamlMappingImpl(private[yaml] val value: JMap[String, AnyRef]) ext
     value.containsKey(key)
 
   def apply(key: String): YamlNode =
-    wrap(getValue(key))
+    value.getOrDefault(key, NoValue) match
+      case NoValue => throw YamlMappingError(key, new NoSuchElementException(key))
+      case value   => wrap(value)
 
-  private def getValue(key: String): AnyRef =
-    value.getOrDefault(key, "b4efcad99f60423a") match
-      case "b4efcad99f60423a" => throw new NoSuchElementException(key)
-      case value              => value
+  def get(key: String): Option[YamlNode] =
+    value.getOrDefault(key, NoValue) match
+      case NoValue => None
+      case value   => Some(wrap(value))

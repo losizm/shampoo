@@ -17,7 +17,7 @@ package shampoo.yaml
 
 import scala.language.implicitConversions
 
-class YamlSpec extends org.scalatest.flatspec.AnyFlatSpec:
+class YamlSpec extends YamlCollectionSpec:
   it should "load YAML" in {
     val yaml = Yaml.load("""
       host: localhost
@@ -146,7 +146,7 @@ class YamlSpec extends org.scalatest.flatspec.AnyFlatSpec:
 
     assert { yaml(3) == YamlNull }
 
-    assertThrows[NullPointerException] { yaml.read[String](3) }
+    assertSequenceError(3, classOf[NullPointerException]) { yaml.read[String](3) }
     assert { yaml.readOption[String](3) == None }
     assert { yaml.readOrElse(3, "def") == "def" }
   }
@@ -168,7 +168,8 @@ class YamlSpec extends org.scalatest.flatspec.AnyFlatSpec:
 
     assert(yaml("keepAlive") == YamlNull)
     assert(yaml.isNull("keepAlive"))
-    assertThrows[NullPointerException](yaml.getMapping("keepAlive"))
+
+    assertMappingError("keepAlive", classOf[NullPointerException]) { yaml.getMapping("keepAlive") }
 
     assert(yaml("ssl").isInstanceOf[YamlMapping])
     assert(yaml.getMapping("ssl").nonEmpty)
@@ -210,13 +211,13 @@ class YamlSpec extends org.scalatest.flatspec.AnyFlatSpec:
     assert(yaml.getSequence("incoming").getMapping(2).getString("sourceDirectory") == "/ui")
     assert(yaml.getSequence("incoming").getMapping(2).getString("default") == "index.html")
 
-    assertThrows[IndexOutOfBoundsException](yaml.getSequence("incoming").getString(3))
-    assertThrows[IndexOutOfBoundsException](yaml.getSequence("incoming").getBoolean(3))
-    assertThrows[IndexOutOfBoundsException](yaml.getSequence("incoming").getInt(3))
-    assertThrows[IndexOutOfBoundsException](yaml.getSequence("incoming").getLong(3))
-    assertThrows[IndexOutOfBoundsException](yaml.getSequence("incoming").getDouble(3))
-    assertThrows[IndexOutOfBoundsException](yaml.getSequence("incoming").getMapping(3))
-    assertThrows[IndexOutOfBoundsException](yaml.getSequence("incoming").getSequence(3))
+    assertSequenceError(3, classOf[IndexOutOfBoundsException]) { yaml.getSequence("incoming").getString(3) }
+    assertSequenceError(3, classOf[IndexOutOfBoundsException]) { yaml.getSequence("incoming").getBoolean(3) }
+    assertSequenceError(3, classOf[IndexOutOfBoundsException]) { yaml.getSequence("incoming").getInt(3) }
+    assertSequenceError(3, classOf[IndexOutOfBoundsException]) { yaml.getSequence("incoming").getLong(3) }
+    assertSequenceError(3, classOf[IndexOutOfBoundsException]) { yaml.getSequence("incoming").getDouble(3) }
+    assertSequenceError(3, classOf[IndexOutOfBoundsException]) { yaml.getSequence("incoming").getMapping(3) }
+    assertSequenceError(3, classOf[IndexOutOfBoundsException]) { yaml.getSequence("incoming").getSequence(3) }
 
     assert(yaml.getSequence("outgoing").isEmpty)
     assert(yaml.getSequence("outgoing").size == 0)
@@ -225,5 +226,5 @@ class YamlSpec extends org.scalatest.flatspec.AnyFlatSpec:
     assert(yaml.getMapping("redirect").size == 0)
     assert(yaml.getMapping("redirect").keys.isEmpty)
 
-    assertThrows[NoSuchElementException](yaml.getInt("none"))
+    assertMappingError("none", classOf[NoSuchElementException]) { yaml.getInt("none") }
     info(s"\n${Yaml.dump(yaml)}")

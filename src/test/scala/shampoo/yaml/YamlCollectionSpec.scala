@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Carlos Conyers
+ * Copyright 2025 Carlos Conyers
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,13 @@
  */
 package shampoo.yaml
 
-import scala.jdk.javaapi.CollectionConverters.asScala
+trait YamlCollectionSpec extends org.scalatest.flatspec.AnyFlatSpec:
+  def assertMappingError(key: String, cause: Class[?])(test: => Any): Unit =
+    val error = intercept[YamlMappingError](test)
+    assert(error.key == key)
+    assert(cause.isAssignableFrom(cause))
 
-import YamlValues.*
-
-private class YamlSequenceImpl(private[yaml] val value: JList[AnyRef]) extends AbstractYamlSequence:
-  val size = value.size()
-
-  lazy val toSeq = asScala(value).map(wrap).toSeq
-
-  def apply(index: Int): YamlNode =
-    if index < 0 || index >= size then
-      throw YamlSequenceError(index, IndexOutOfBoundsException(index))
-    wrap(value.get(index))
+  def assertSequenceError(index: Int, cause: Class[?])(test: => Any): Unit =
+    val error = intercept[YamlSequenceError](test)
+    assert(error.index == index)
+    assert(cause.isAssignableFrom(cause))

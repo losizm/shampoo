@@ -17,7 +17,7 @@ package shampoo.yaml
 
 import scala.collection.immutable.ListMap
 
-class YamlNumberSpec extends org.scalatest.flatspec.AnyFlatSpec:
+class YamlNumberSpec extends YamlCollectionSpec:
   it should "construct and represent YAML containing ints" in {
     val yaml = Yaml.load("""
       foo: 1
@@ -171,53 +171,53 @@ class YamlNumberSpec extends org.scalatest.flatspec.AnyFlatSpec:
     assert(yaml.keys == Set("foo", "bar", "baz", "qux", "quux"))
 
     assert(yaml("foo") == YamlNumber(1234567890123456L))
-    assertThrows[ArithmeticException](yaml.getInt("foo"))
+    assertMappingError("foo", classOf[ArithmeticException]) { yaml.getInt("foo") }
     assert(yaml.getLong("foo") == 1234567890123456L)
     assert(yaml.getDouble("foo") == 1234567890123456.0)
     assert(yaml.getBigInt("foo") == BigInt("1234567890123456"))
     assert(yaml.getBigDecimal("foo") == BigDecimal("1234567890123456"))
 
-    assertThrows[ArithmeticException](yaml.getInt("bar"))
-    assertThrows[ArithmeticException](yaml.getLong("bar"))
+    assertMappingError("bar", classOf[ArithmeticException]) { yaml.getInt("bar") }
+    assertMappingError("bar", classOf[ArithmeticException]) { yaml.getLong("bar") }
     assert(yaml.getFloat("bar") == 1234.01234f)
     assert(yaml.getDouble("bar") == 1234.01234)
-    assertThrows[ArithmeticException](yaml.getBigInt("bar"))
+    assertMappingError("bar", classOf[ArithmeticException]) { yaml.getBigInt("bar") }
     assert(yaml.getBigDecimal("bar").toDouble == BigDecimal(1234.01234).toDouble)
 
     assert(yaml("baz") == YamlNumber(BigInt("123456789012345678901234567890123456789")))
-    assertThrows[ArithmeticException](yaml.getInt("baz"))
-    assertThrows[ArithmeticException](yaml.getLong("baz"))
+    assertMappingError("baz", classOf[ArithmeticException]) { yaml.getInt("baz") }
+    assertMappingError("baz", classOf[ArithmeticException]) { yaml.getLong("baz") }
     assert(yaml.getBigInt("baz") == BigInt("123456789012345678901234567890123456789"))
     assert(yaml.getBigDecimal("baz") == BigDecimal("123456789012345678901234567890123456789"))
 
     assert(yaml("qux") == YamlNumber(BigDecimal("123456789012345678901234567890123456789.1234567890123456789")))
-    assertThrows[ArithmeticException](yaml.getInt("qux"))
-    assertThrows[ArithmeticException](yaml.getLong("qux"))
-    assertThrows[ArithmeticException](yaml.getBigInt("qux"))
+    assertMappingError("qux", classOf[ArithmeticException]) { yaml.getInt("qux") }
+    assertMappingError("qux", classOf[ArithmeticException]) { yaml.getLong("qux") }
+    assertMappingError("qux", classOf[ArithmeticException]) { yaml.getBigInt("qux") }
     assert(yaml.getBigDecimal("qux") == BigDecimal("123456789012345678901234567890123456789.1234567890123456789"))
 
     assert(yaml("quux")(0) == YamlNumber(1234567890123456L))
-    assertThrows[ArithmeticException](yaml("quux").getInt(0))
+    assertSequenceError(0, classOf[ArithmeticException]) { yaml("quux").getInt(0) }
     assert(yaml("quux").getLong(0) == 1234567890123456L)
     assert(yaml("quux").getDouble(0) == 1234567890123456.0)
     assert(yaml("quux").getBigInt(0) == BigInt("1234567890123456"))
     assert(yaml("quux").getBigDecimal(0) == BigDecimal("1234567890123456"))
 
-    assertThrows[ArithmeticException](yaml("quux").getInt(1))
-    assertThrows[ArithmeticException](yaml("quux").getLong(1))
+    assertSequenceError(1, classOf[ArithmeticException]) { yaml("quux").getInt(1) }
+    assertSequenceError(1, classOf[ArithmeticException]) { yaml("quux").getLong(1) }
     assert(yaml("quux").getFloat(1) == 1234.01234f)
     assert(yaml("quux").getDouble(1) == 1234.01234)
-    assertThrows[ArithmeticException](yaml("quux").getBigInt(1))
+    assertSequenceError(1, classOf[ArithmeticException]) { yaml("quux").getBigInt(1) }
     assert(yaml("quux").getBigDecimal(1).toDouble == BigDecimal(1234.01234).toDouble)
 
     assert(yaml("quux")(2) == YamlNumber(BigInt("123456789012345678901234567890123456789")))
-    assertThrows[ArithmeticException](yaml("quux").getInt(2))
-    assertThrows[ArithmeticException](yaml("quux").getLong(2))
+    assertSequenceError(2, classOf[ArithmeticException]) { yaml("quux").getInt(2) }
+    assertSequenceError(2, classOf[ArithmeticException]) { yaml("quux").getLong(2) }
     assert(yaml("quux").getBigInt(2) == BigInt("123456789012345678901234567890123456789"))
     assert(yaml("quux").getBigDecimal(2) == BigDecimal("123456789012345678901234567890123456789"))
 
     assert(yaml("quux")(3) == YamlNumber(BigDecimal("123456789012345678901234567890123456789.1234567890123456789")))
-    assertThrows[ArithmeticException](yaml("quux").getInt(3))
-    assertThrows[ArithmeticException](yaml("quux").getLong(3))
-    assertThrows[ArithmeticException](yaml("quux").getBigInt(3))
+    assertSequenceError(3, classOf[ArithmeticException]) { yaml("quux").getInt(3) }
+    assertSequenceError(3, classOf[ArithmeticException]) { yaml("quux").getLong(3) }
+    assertSequenceError(3, classOf[ArithmeticException]) { yaml("quux").getBigInt(3) }
     assert(yaml("quux").getBigDecimal(3) == BigDecimal("123456789012345678901234567890123456789.1234567890123456789"))

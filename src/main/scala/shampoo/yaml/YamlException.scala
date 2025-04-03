@@ -40,3 +40,28 @@ class YamlException(message: String, cause: Throwable) extends RuntimeException(
    * @param cause underlying cause
    */
   def this(cause: Throwable) = this(null, cause)
+
+/**
+ * Defines YAML expectation error.
+ *
+ * @param expected class
+ * @param actual class
+ */
+case class YamlExpectationError(expected: Class[_], actual: Class[_])
+  extends YamlException(s"Expected ${expected.getSimpleName} instead of ${actual.getSimpleName}")
+
+/**
+ * Defines YAML mapping error.
+ *
+ * @param key mapping key
+ * @param cause underlying cause
+ */
+case class YamlMappingError(key: String, cause: Exception) extends YamlException(s"Error accessing key: $key", cause)
+
+/**
+ * Defines YAML sequence error.
+ *
+ * @param index sequence index
+ * @param cause underlying cause
+ */
+case class YamlSequenceError(index: Int, cause: Exception) extends YamlException(s"Error accessing index: $index", cause)

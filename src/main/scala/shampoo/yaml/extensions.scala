@@ -28,7 +28,7 @@ extension (yaml: YamlNode)
    */
   @targetName("at")
   def \(key: String): YamlNode =
-    yaml.asInstanceOf[YamlMapping](key)
+    expect[YamlMapping](yaml)(key)
 
   /**
    * Gets value in YAML sequence.
@@ -39,7 +39,7 @@ extension (yaml: YamlNode)
    */
   @targetName("at")
   def \(index: Int): YamlNode =
-    yaml.asInstanceOf[YamlSequence](index)
+    expect[YamlSequence](yaml)(index)
 
   /**
    * Collects values with given key in traversed collections.
@@ -67,11 +67,6 @@ extension (yaml: YamlNode)
   @targetName("collect")
   def \\(key: String): Seq[YamlNode] =
     yaml match
-      case yaml: YamlMapping =>
-        Try(yaml(key))
-          .toOption
-          .toSeq ++
-        yaml.toMap.values.flatMap(_ \\ key).toSeq
-
+      case yaml: YamlMapping  => yaml.get(key).toSeq ++ yaml.toMap.values.flatMap(_ \\ key).toSeq
       case yaml: YamlSequence => yaml.toSeq.flatMap(_ \\ key).toSeq
       case _                  => Nil

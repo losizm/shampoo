@@ -137,7 +137,7 @@ class YamlSequenceBuilder:
     node.add(unwrap(value))
     this
 
-  /** Constructs sequence. */
+  /** Creates sequence. */
   def toYamlSequence(): YamlSequence =
     val arr = YamlSequenceImpl(node)
     node = JLinkedList[AnyRef]()

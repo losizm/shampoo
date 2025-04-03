@@ -28,6 +28,9 @@ sealed trait YamlNode:
 /** Defines YAML scalar. */
 sealed trait YamlScalar extends YamlNode
 
+/** Defines YAML null. */
+case object YamlNull extends YamlScalar
+
 /** Defines YAML string. */
 sealed trait YamlString extends YamlScalar:
   /** Gets value. */
@@ -36,7 +39,7 @@ sealed trait YamlString extends YamlScalar:
 /** Provides YAML string constructor. */
 object YamlString:
   /**
-   * Constructs YAML string.
+   * Creates YAML string.
    *
    * @param value string
    */
@@ -51,15 +54,12 @@ sealed trait YamlBoolean extends YamlScalar:
 /** Provides YAML boolean constructor. */
 object YamlBoolean:
   /**
-   * Constructs YAML boolean.
+   * Creates YAML boolean.
    *
    * @param value boolean
    */
   def apply(value: Boolean): YamlBoolean =
     YamlBooleanImpl(value)
-
-/** Defines YAML null. */
-case object YamlNull extends YamlScalar
 
 /** Defines YAML number. */
 sealed trait YamlNumber extends YamlScalar:
@@ -83,7 +83,11 @@ sealed trait YamlNumber extends YamlScalar:
   /** Gets number as `Double`. */
   def toDouble: Double
 
-  /** Gets number as `BigInt`. */
+  /**
+   * Gets number as `BigInt`.
+   *
+   * @throws java.lang.ArithmeticException if conversion is not exact.
+   */
   def toBigInt: BigInt
 
   /** Gets number as `BigDecimal`. */
@@ -94,7 +98,7 @@ sealed trait YamlNumber extends YamlScalar:
 /** Provides YAML number constructor. */
 object YamlNumber:
   /**
-   * Constructs YAML number.
+   * Creates YAML number.
    *
    * @param value int
    */
@@ -102,7 +106,7 @@ object YamlNumber:
     YamlNumberImpl(BigDecimal(value))
 
   /**
-   * Constructs YAML number.
+   * Creates YAML number.
    *
    * @param value long
    */
@@ -110,7 +114,7 @@ object YamlNumber:
     YamlNumberImpl(BigDecimal(value))
 
   /**
-   * Constructs YAML number.
+   * Creates YAML number.
    *
    * @param value float
    */
@@ -118,7 +122,7 @@ object YamlNumber:
     YamlNumberImpl(BigDecimal(value))
 
   /**
-   * Constructs YAML number.
+   * Creates YAML number.
    *
    * @param value double
    */
@@ -126,7 +130,7 @@ object YamlNumber:
     YamlNumberImpl(BigDecimal(value))
 
   /**
-   * Constructs YAML number.
+   * Creates YAML number.
    *
    * @param value big int
    */
@@ -134,7 +138,7 @@ object YamlNumber:
     YamlNumberImpl(BigDecimal(value))
 
   /**
-   * Constructs YAML number.
+   * Creates YAML number.
    *
    * @param value big decimal
    */
@@ -178,7 +182,7 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key or value does not exist
+   * @throws YamlMappingError if key does not exist
    */
   def apply(key: String): YamlNode
 
@@ -187,9 +191,7 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    */
-  def get(key: String): Option[YamlNode] =
-    try Some(apply(key))
-    catch case _: NoSuchElementException => None
+  def get(key: String): Option[YamlNode]
 
   /**
    * Gets node or returns default node.
@@ -201,11 +203,11 @@ sealed trait YamlMapping extends YamlCollection:
     get(key).getOrElse(default)
 
   /**
-   * Tests for null.
+   * Tests for null node.
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
+   * @throws YamlMappingError if key does not exist
    */
   def isNull(key: String): Boolean =
     apply(key) == YamlNull
@@ -215,8 +217,8 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if data cannot be
+   * constructed
    */
   def getString(key: String): String =
     read(key)
@@ -226,8 +228,8 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if data cannot be
+   * constructed
    */
   def getBoolean(key: String): Boolean =
     read(key)
@@ -237,8 +239,8 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if data cannot be
+   * constructed
    */
   def getInt(key: String): Int =
     read(key)
@@ -248,8 +250,8 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if data cannot be
+   * constructed
    */
   def getLong(key: String): Long =
     read(key)
@@ -259,8 +261,8 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if data cannot be
+   * constructed
    */
   def getFloat(key: String): Float =
     read(key)
@@ -270,8 +272,8 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if data cannot be
+   * constructed
    */
   def getDouble(key: String): Double =
     read(key)
@@ -281,8 +283,8 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if data cannot be
+   * constructed
    */
   def getBigInt(key: String): BigInt =
     read(key)
@@ -292,8 +294,8 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if data cannot be
+   * constructed
    */
   def getBigDecimal(key: String): BigDecimal =
     read(key)
@@ -303,8 +305,7 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if node is not mapping
    */
   def getMapping(key: String): YamlMapping =
     read(key)
@@ -314,8 +315,7 @@ sealed trait YamlMapping extends YamlCollection:
    *
    * @param key mapping key
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if node is not sequence
    */
   def getSequence(key: String): YamlSequence =
     read(key)
@@ -326,13 +326,17 @@ sealed trait YamlMapping extends YamlCollection:
    * @param key mapping key
    * @param constructor data constructor
    *
-   * @throws java.util.NoSuchElementException if key does not exist
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlMappingError if key does not exist or if data cannot be
+   * constructed
    */
   def read[T](key: String)(using constructor: YamlConstructor[T]): T =
-    apply(key) match
-      case YamlNull => throw NullPointerException()
-      case node     => node.as[T]
+    try
+      apply(key) match
+        case YamlNull => throw NullPointerException()
+        case node     => node.as[T]
+    catch
+      case e: YamlMappingError => throw e
+      case e: Exception        => throw YamlMappingError(key, e)
 
   /**
    * Optionally reads constructed data.
@@ -340,20 +344,28 @@ sealed trait YamlMapping extends YamlCollection:
    * @param key mapping key
    * @param constructor data constructor
    *
-   * @return `Some` constructed data, or `None` if key does not exists or its
-   * associated node is null
+   * @return constructed data, or none if key does not exist or its node is null
+   *
+   * @throws YamlMappingError if data cannot be constructed
    */
   def readOption[T](key: String)(using constructor: YamlConstructor[T]): Option[T] =
-    get(key).filter(YamlNull.!=).map(_.as[T])
+    try
+      get(key).filter(YamlNull.!=).map(_.as[T])
+    catch
+      case e: YamlMappingError => throw e
+      case e: Exception        => throw YamlMappingError(key, e)
 
   /**
-   * Reads constructed data or returns default value.
+   * Reads constructed data or returns default.
    *
    * @param key mapping key
+   * @param default default data
    * @param constructor data constructor
    *
-   * @return constructed data, or default value if key does not exist or its
-   * associated node is null
+   * @return constructed data, or default if key does not exist or its node
+   * is null
+   *
+   * @throws YamlMappingError if data cannot be constructed
    */
   def readOrElse[T](key: String, default: => T)(using constructor: YamlConstructor[T]): T =
     readOption(key).getOrElse(default)
@@ -372,16 +384,16 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
+   * @throws YamlSequenceError if index is out of range
    */
   def apply(index: Int): YamlNode
 
   /**
-   * Tests for null.
+   * Tests for null node.
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
+   * @throws YamlSequenceError if index is out of range
    */
   def isNull(index: Int): Boolean =
     apply(index) == YamlNull
@@ -391,8 +403,8 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def getString(index: Int): String =
     read(index)
@@ -402,8 +414,8 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def getBoolean(index: Int): Boolean =
     read(index)
@@ -413,8 +425,8 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def getInt(index: Int): Int =
     read(index)
@@ -424,8 +436,8 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def getLong(index: Int): Long =
     read(index)
@@ -435,8 +447,8 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def getFloat(index: Int): Float =
     read(index)
@@ -446,8 +458,8 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def getDouble(index: Int): Double =
     read(index)
@@ -457,8 +469,8 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def getBigInt(index: Int): BigInt =
     read(index)
@@ -468,8 +480,8 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def getBigDecimal(index: Int): BigDecimal =
     read(index)
@@ -479,8 +491,8 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if node is not
+   * mapping
    */
   def getMapping(index: Int): YamlMapping =
     read(index)
@@ -490,8 +502,8 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if node is not
+   * sequence
    */
   def getSequence(index: Int): YamlSequence =
     read(index)
@@ -501,13 +513,17 @@ sealed trait YamlSequence extends YamlCollection:
    *
    * @param index sequence index
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
-   * @throws java.lang.NullPointerException if node is null
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def read[T](index: Int)(using constructor: YamlConstructor[T]): T =
-    apply(index) match
-      case YamlNull => throw NullPointerException()
-      case node     => node.as[T]
+    try
+      apply(index) match
+        case YamlNull => throw NullPointerException()
+        case node     => node.as[T]
+    catch
+      case e: YamlSequenceError => throw e
+      case e: Exception         => throw YamlSequenceError(index, e)
 
   /**
    * Optionally reads constructed data.
@@ -515,24 +531,31 @@ sealed trait YamlSequence extends YamlCollection:
    * @param index sequence index
    * @param constructor data constructor
    *
-   * @return `Some` constructed data, or `None` if node is null
+   * @return constructed data, or none if node is null
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def readOption[T](index: Int)(using constructor: YamlConstructor[T]): Option[T] =
-    apply(index) match
-      case YamlNull => None
-      case node     => Some(node.as[T])
+    try
+      apply(index) match
+        case YamlNull => None
+        case node     => Some(node.as[T])
+    catch
+      case e: YamlSequenceError => throw e
+      case e: Exception         => throw YamlSequenceError(index, e)
 
   /**
-   * Reads constructed data or returns default value.
+   * Reads constructed data or returns default.
    *
    * @param index sequence index
+   * @param default default data
    * @param constructor data constructor
    *
-   * @return constructed data, or default value if node is null
+   * @return constructed data, or default if node is null
    *
-   * @throws java.lang.IndexOutOfBoundsException if index is out of bounds
+   * @throws YamlSequenceError if index is out of range or if data cannot be
+   * constructed
    */
   def readOrElse[T](index: Int, default: => T)(using constructor: YamlConstructor[T]): T =
     readOption(index).getOrElse(default)
@@ -542,18 +565,22 @@ sealed trait YamlSequence extends YamlCollection:
  *
  * @note A collection facade is created by conversion only.
  *
- * @see [[yamlStructureFacadeConversion]]
+ * @see [[yamlCollectionFacadeConversion]]
  */
 class YamlCollectionFacade private[yaml] (node: YamlCollection) extends YamlMapping, YamlSequence:
   def size = node.size
 
-  def keys = node.asInstanceOf[YamlMapping].keys
-  def toMap = node.asInstanceOf[YamlMapping].toMap
-  def contains(key: String) = node.asInstanceOf[YamlMapping].contains(key)
-  def apply(key: String) = node.asInstanceOf[YamlMapping].apply(key)
+  def keys = expect[YamlMapping](node).keys
+  def toMap = expect[YamlMapping](node).toMap
+  def contains(key: String) = expect[YamlMapping](node).contains(key)
+  def get(key: String) = expect[YamlMapping](node).get(key)
+  def apply(key: String) = expect[YamlMapping](node).apply(key)
 
-  def toSeq = node.asInstanceOf[YamlSequence].toSeq
-  def apply(index: Int) = node.asInstanceOf[YamlSequence].apply(index)
+  def toSeq = expect[YamlSequence](node).toSeq
+  def apply(index: Int) = expect[YamlSequence](node).apply(index)
+
+  /** Unwraps underlying YAML collection. */
+  def unwrap: YamlCollection = node
 
   private[yaml] def value = node.value
 

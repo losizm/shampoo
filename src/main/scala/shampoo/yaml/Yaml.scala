@@ -51,13 +51,13 @@ object Yaml:
   private val snakeYaml = new ThreadLocal[SnakeYaml]:
     override def initialValue = SnakeYaml()
 
-  /** Creates YAML mapping with supplied key-node pairs.  */
+  /** Creates YAML mapping from supplied key-node pairs.  */
   def map(pairs: (String, YamlNode)*): YamlMapping =
     pairs.foldLeft(YamlMappingBuilder()) {
       case (mapping, (key, node)) => mapping.add(key, node)
     }.toYamlMapping()
 
-  /** Creates YAML sequence with supplied nodes.  */
+  /** Creates YAML sequence from supplied nodes.  */
   def seq(nodes: YamlNode*): YamlSequence =
     nodes.foldLeft(YamlSequenceBuilder()) {
       case (sequence, node) => sequence.add(node)
@@ -73,7 +73,7 @@ object Yaml:
     representer.represent(data)
 
   /**
-   * Loads YAML mapping.
+   * Loads YAML.
    *
    * @throws YamlException if YAML cannot be loaded from input
    */
@@ -81,7 +81,7 @@ object Yaml:
     load(StringReader(input))
 
   /**
-   * Loads YAML mapping.
+   * Loads YAML.
    *
    * @throws YamlException if YAML cannot be loaded from input
    */
@@ -89,7 +89,7 @@ object Yaml:
     snakeYaml.get.load(input)
 
   /**
-   * Loads YAML mapping.
+   * Loads YAML.
    *
    * @throws YamlException if YAML cannot be loaded from input
    */
@@ -97,7 +97,7 @@ object Yaml:
     load(InputStreamReader(input))
 
   /**
-   * Loads YAML mapping.
+   * Loads YAML.
    *
    * @throws YamlException if YAML cannot be loaded from input
    */
@@ -106,7 +106,7 @@ object Yaml:
     try load(reader) finally reader.close()
 
   /**
-   * Loads YAML mapping.
+   * Loads YAML.
    *
    * @throws YamlException if YAML cannot be loaded from input
    */

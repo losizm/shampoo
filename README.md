@@ -8,18 +8,17 @@ The YAML library for Scala.
 To get started, add **Shampoo** to your project:
 
 ```scala
-libraryDependencies += "com.github.losizm" %% "shampoo" % "0.2.1"
+libraryDependencies += "com.github.losizm" %% "shampoo" % "1.0.0"
 ```
 
 The underlying YAML processor is provided by [SnakeYAML Engine](https://github.com/snakeyaml/snakeyaml-engine/),
 so it'll be added transitively.
 
-## Lather Up !!!
-Reading and writing are powered by the `YamlConstructor` and `YamlRepresenter`
-traits. They convert values to and from YAML, and library-provided
-implementations are available for handling standard types like `String`, `Int`,
-etc. You must define custom implementations for converting to and from your
-classes.
+## Lather Up!
+Reading and writing are powered by `YamlConstructor` and `YamlRepresenter`.
+Library-provided implementations are available for working with standard types,
+such as `String`, `Int`, etc. You must define custom implementations to work
+with other types.
 
 ```scala
 import scala.language.implicitConversions
@@ -70,9 +69,8 @@ assert(yamlUser("groups").as[Seq[String]] == Seq("lupita", "admin", "sudoers"))
 ```
 
 Special implementations are available for working with collections. For example,
-if you define `YamlConstructor[User]`, you automatically get
-`YamlConstructor[Seq[User]]`. The same applies to `YamlRepresenter[User]`, which
-infers `YamlRepresenter[Seq[User]]`.
+if `YamlConstructor[User]` is defined, `YamlConstructor[Seq[User]]` can be
+inferred. The same applies to `YamlRepresenter[User]` and `YamlRepresenter[Seq[User]]`.
 
 ```scala
 // Load YAML sequence
@@ -96,10 +94,9 @@ assert { users(1) == User(1000, "lupita", Seq("lupita", "admin", "sudoers")) }
 
 // Or as other Iterables
 val userList = yaml.as[List[User]]
-val userIter = yaml.as[Iterator[User]]
 val userSet  = yaml.as[Set[User]]
 
-// Even as an Array
+// Even as Array
 val userArray = yaml.as[Array[User]]
 
 // Write Seq[User] to YamlSequence

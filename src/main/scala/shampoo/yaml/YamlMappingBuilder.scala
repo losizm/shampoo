@@ -144,7 +144,7 @@ class YamlMappingBuilder:
     node.put(key, unwrap(value))
     this
 
-  /** Constructs mapping. */
+  /** Creates mapping. */
   def toYamlMapping(): YamlMapping =
     val obj = YamlMappingImpl(node)
     node = JHashMap[String, AnyRef]()

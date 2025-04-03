@@ -15,6 +15,8 @@
  */
 package shampoo.yaml
 
+import scala.reflect.ClassTag
+
 private type JList[A]    = java.util.List[A]
 private type JMap[K, V]  = java.util.Map[K, V]
 private type JBoolean    = java.lang.Boolean
@@ -24,3 +26,19 @@ private type JFloat      = java.lang.Float
 private type JDouble     = java.lang.Double
 private type JBigInteger = java.math.BigInteger
 private type JBigDecimal = java.math.BigDecimal
+
+private inline def expect[T <: YamlNode](value: YamlNode)(using ctag: ClassTag[T]): T =
+  try
+    value.asInstanceOf[T]
+  catch case _: ClassCastException =>
+    throw YamlExpectationError(ctag.runtimeClass, yamlNodeType(value))
+
+private def yamlNodeType[T <: YamlNode](value: YamlNode): Class[_] =
+  value match
+    case YamlNull                => classOf[YamlNull.type]
+    case _: YamlString           => classOf[YamlString]
+    case _: YamlNumber           => classOf[YamlNumber]
+    case _: YamlBoolean          => classOf[YamlBoolean]
+    case f: YamlCollectionFacade => yamlNodeType(f.unwrap)
+    case _: YamlMapping          => classOf[YamlMapping]
+    case _: YamlSequence         => classOf[YamlSequence]
