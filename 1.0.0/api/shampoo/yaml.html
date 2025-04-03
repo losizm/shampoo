@@ -1,0 +1,3025 @@
+<!DOCTYPE html><html data-pathToRoot="../" data-rawLocation="shampoo/yaml" data-dynamicSideMenu="false"><head><meta charset="utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta><title>shampoo.yaml</title><link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"></link><script type="text/javascript" src="../scripts/theme.js"></script><script type="text/javascript" src="../scripts/searchData.js" defer="true"></script><script type="text/javascript" src="../scripts/scastieConfiguration.js" defer="true"></script><link rel="stylesheet" href="../styles/theme/bundle.css"></link><link rel="stylesheet" href="../styles/theme/components/bundle.css"></link><link rel="stylesheet" href="../styles/theme/components/button/bundle.css"></link><link rel="stylesheet" href="../styles/theme/layout/bundle.css"></link><link rel="stylesheet" href="../styles/nord-light.css"></link><link rel="stylesheet" href="../styles/dotty-icons.css"></link><link rel="stylesheet" href="../styles/filter-bar.css"></link><link rel="stylesheet" href="../styles/code-snippets.css"></link><link rel="stylesheet" href="../styles/searchbar.css"></link><link rel="stylesheet" href="../styles/social-links.css"></link><link rel="stylesheet" href="../styles/versions-dropdown.css"></link><link rel="stylesheet" href="../styles/content-contributors.css"></link><link rel="stylesheet" href="../styles/fontawesome.css"></link><script type="text/javascript" src="../hljs/highlight.pack.js" defer="true"></script><script type="text/javascript" src="../scripts/hljs-scala3.js" defer="true"></script><script type="text/javascript" src="../scripts/ux.js" defer="true"></script><script type="text/javascript" src="../scripts/common/component.js" defer="true"></script><script type="text/javascript" src="../scripts/common/utils.js" defer="true"></script><script type="text/javascript" src="../scripts/components/FilterBar.js" defer="true"></script><script type="text/javascript" src="../scripts/components/DocumentableList.js" defer="true"></script><script type="text/javascript" src="../scripts/components/Input.js" defer="true"></script><script type="text/javascript" src="../scripts/components/FilterGroup.js" defer="true"></script><script type="text/javascript" src="../scripts/components/Filter.js" defer="true"></script><script type="text/javascript" src="../scripts/scaladoc-scalajs.js" defer="true"></script><script type="text/javascript" src="../scripts/contributors.js" defer="true"></script><script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js" defer="true"></script><script type="text/javascript" src="https://d3js.org/d3.v6.min.js" defer="true"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/graphlib-dot@0.6.2/dist/graphlib-dot.min.js" defer="true"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dagre-d3/0.6.1/dagre-d3.min.js" defer="true"></script><script type="text/javascript" src="https://scastie.scala-lang.org/embedded.js" defer="true"></script><script type="text/javascript" src="../scripts/data.js" defer="true"></script><link rel="stylesheet" href="../styles/apistyles.css"></link><script>var pathToRoot = "../";</script></head><body><div id=""><div id="header" class="body-small"><div class="header-container-left"><a href="../" class="logo-container"><span id="project-logo" class="project-logo"><img src="../project-logo/logo.svg"></img></span><span id="dark-project-logo" class="project-logo"><img src="../project-logo/logo.svg"></img></span><span class="project-name h300">Shampoo</span></a><span onclick="dropdownHandler(event)" class="text-button with-arrow" id="dropdown-trigger"><a><div class="projectVersion">1.0.0</div></a></span><div id="version-dropdown" class="dropdown-menu"></div></div><div class="header-container-right"><button id="search-toggle" class="icon-button"></button><span id="theme-toggle" class="icon-button"></span><span id="mobile-menu-toggle" class="icon-button hamburger"></span></div></div><div id="mobile-menu"><div class="mobile-menu-header body-small"><span class="mobile-menu-logo"><span id="project-logo" class="project-logo"><img src="../project-logo/logo.svg"></img></span><span id="dark-project-logo" class="project-logo"><img src="../project-logo/logo.svg"></img></span><span class="project-name h300">Shampoo</span></span><button id="mobile-menu-close" class="icon-button close"></button></div><div class="mobile-menu-container body-medium"><input id="mobile-scaladoc-searchbar-input" class="scaladoc-searchbar-input" type="search" placeholder="Find anything"></input><span id="mobile-theme-toggle" class="mobile-menu-item mode"></span></div></div><span id="mobile-sidebar-toggle" class="floating-button"></span><div id="leftColumn" class="body-small"><div class="switcher-container"><a id="api-nav-button" class="switcher h100 selected" href="../index.html">API</a></div><nav id="api-nav" class="side-menu"><div class="ni n0 expanded"><span class="nh h100 selected"><button class="ar icon-button expanded"></button><a href="#"><span class="micon pa"></span><span>shampoo.yaml</span></a></span><div class="ni n1 "><span class="nh "><a href="yaml/Yaml$.html"><span class="micon ob"></span><span>Yaml</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlBoolean.html"><span class="micon tr"></span><span>YamlBoolean</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlBoolean$.html"><span class="micon ob"></span><span>YamlBoolean</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlCollection.html"><span class="micon tr"></span><span>YamlCollection</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlCollectionFacade.html"><span class="micon cl"></span><span>YamlCollectionFacade</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlConstructor.html"><span class="micon tr"></span><span>YamlConstructor</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlException.html"><span class="micon cl"></span><span>YamlException</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlExpectationError.html"><span class="micon cl"></span><span>YamlExpectationError</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlMapping.html"><span class="micon tr"></span><span>YamlMapping</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlMappingBuilder.html"><span class="micon cl"></span><span>YamlMappingBuilder</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlMappingError.html"><span class="micon cl"></span><span>YamlMappingError</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlNode.html"><span class="micon tr"></span><span>YamlNode</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlNull$.html"><span class="micon ob"></span><span>YamlNull</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlNumber.html"><span class="micon tr"></span><span>YamlNumber</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlNumber$.html"><span class="micon ob"></span><span>YamlNumber</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlRepresenter.html"><span class="micon tr"></span><span>YamlRepresenter</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlScalar.html"><span class="micon tr"></span><span>YamlScalar</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlSequence.html"><span class="micon tr"></span><span>YamlSequence</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlSequenceBuilder.html"><span class="micon cl"></span><span>YamlSequenceBuilder</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlSequenceError.html"><span class="micon cl"></span><span>YamlSequenceError</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlString.html"><span class="micon tr"></span><span>YamlString</span></a></span></div><div class="ni n1 "><span class="nh "><a href="yaml/YamlString$.html"><span class="micon ob"></span><span>YamlString</span></a></span></div></div></nav></div><div id="footer" class="body-small"><div class="left-container">Generated with</div><div class="right-container"><div class="text"></div></div><div class="text-mobile"></div></div><div id="scaladoc-searchBar"></div><div id="main"><div class="breadcrumbs container"><a href="../index.html">Shampoo</a>/<a href="yaml.html">shampoo.yaml</a></div><div id="content" class="body-medium"><div><div class="cover-header">
+ <span class="icon"><span class="micon pa"></span></span>
+ <h1 class="h600 single">shampoo.yaml</h1>
+</div>
+<div class="fqname body-large">
+ <span></span>
+</div>
+<div class="main-signature mono-small-block">
+ <div class="signature">
+  <span class="modifiers"></span><span class="kind"><span t="k">package </span></span><a href="yaml.html" t="n" class="documentableName ">shampoo.yaml</a>
+ </div>
+</div>
+<section id="members-list">
+ <h2 class="h500">Members list</h2>
+ <div class="documentableFilter">
+  <div class="filtersContainer"></div><input class="filterableInput" placeholder="Filter by any phrase" data-test-id="filterBarInput" type="search"><button class="clearButton label-only-button" data-test-id="filterBarClearButton">Clear all</button>
+ </div>
+ <div class="membersList expand">
+  <div class="tabs">
+   <div class="contents">
+    <section id="Type-members">
+     <div data-togglable="Type members" class="tab expand">
+      <div class="member-group-header">
+       <h3 data-togglable="Type members" class="h400">Type members</h3>
+      </div>
+      <section id="Classlikes">
+       <div class="documentableList expand">
+        <div class="documentableList-expander">
+         <button class="icon-button show-content expand"></button>
+         <h4 class="groupHeader h200">Classlikes</h4>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">object </span></span><a href="yaml/Yaml$.html" t="n" class="documentableName ">Yaml</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Provides YAML utilities.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Provides YAML utilities.</p>
+              <div class="snippet mono-small-block">
+               <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>import scala.language.implicitConversions
+</span><span line-number="2" class=""><span class="tooltip-container"></span>
+</span><span line-number="3" class=""><span class="tooltip-container"></span>import shampoo.yaml.{ *, given }
+</span><span line-number="4" class=""><span class="tooltip-container"></span>
+</span><span line-number="5" class=""><span class="tooltip-container"></span>// Create YAML mapping
+</span><span line-number="6" class=""><span class="tooltip-container"></span>val user = Yaml.map("id" -&gt; 1000, "name" -&gt; "lupita")
+</span><span line-number="7" class=""><span class="tooltip-container"></span>
+</span><span line-number="8" class=""><span class="tooltip-container"></span>// Create YAML sequence
+</span><span line-number="9" class=""><span class="tooltip-container"></span>val info = Yaml.seq(user, "/home/lupita", 1024)
+</span><span line-number="10" class=""><span class="tooltip-container"></span>
+</span><span line-number="11" class=""><span class="tooltip-container"></span>// Load YAML
+</span><span line-number="12" class=""><span class="tooltip-container"></span>val root = Yaml.load("{ id: 0, name: root }")
+</span><span line-number="13" class=""><span class="tooltip-container"></span>
+</span><span line-number="14" class=""><span class="tooltip-container"></span>case class User(id: Int, name: String)
+</span><span line-number="15" class=""><span class="tooltip-container"></span>
+</span><span line-number="16" class=""><span class="tooltip-container"></span>given userRepresenter: YamlRepresenter[User] =
+</span><span line-number="17" class=""><span class="tooltip-container"></span>  user =&gt; Yaml.map("id" -&gt; user.id, "name" -&gt; user.name)
+</span><span line-number="18" class=""><span class="tooltip-container"></span>
+</span><span line-number="19" class=""><span class="tooltip-container"></span>// Represent value to YAML
+</span><span line-number="20" class=""><span class="tooltip-container"></span>val nobody = Yaml.toYaml(User(65534, "nobody"))
+</span><span line-number="21" class=""><span class="tooltip-container"></span>
+</span><span line-number="22" class=""><span class="tooltip-container"></span>// Dump YAML to stdout
+</span><span line-number="23" class=""><span class="tooltip-container"></span>Yaml.dump(nobody, System.out)
+</span></code></pre>
+               <div class="buttons"></div>
+              </div>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Self type
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <span></span>
+                <div>
+                 <a href="yaml/Yaml$.html" t="n">Yaml</a>.<span t="k">type</span>
+                </div>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="sealed">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">sealed </span></span><span class="kind"><span t="k">trait </span></span><a href="yaml/YamlBoolean.html" t="n" class="documentableName ">YamlBoolean</a><span t="k"> extends </span><a href="yaml/YamlScalar.html" t="t">YamlScalar</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML boolean.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML boolean.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Companion
+              </dt>
+              <dd class="body-medium">
+               <a href="yaml/YamlBoolean$.html">object</a>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <a href="yaml/YamlScalar.html" t="n">YamlScalar</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlNode.html" t="n">YamlNode</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">object </span></span><a href="yaml/YamlBoolean$.html" t="n" class="documentableName ">YamlBoolean</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Provides YAML boolean constructor.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Provides YAML boolean constructor.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Companion
+              </dt>
+              <dd class="body-medium">
+               <a href="yaml/YamlBoolean.html">trait</a>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <span data-unresolved-link="" t="n">Sum</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Mirror</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Self type
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <span></span>
+                <div>
+                 <a href="yaml/YamlBoolean$.html" t="n">YamlBoolean</a>.<span t="k">type</span>
+                </div>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="sealed">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">sealed </span></span><span class="kind"><span t="k">trait </span></span><a href="yaml/YamlCollection.html" t="n" class="documentableName ">YamlCollection</a><span t="k"> extends </span><a href="yaml/YamlNode.html" t="t">YamlNode</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML collection.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML collection.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <a href="yaml/YamlNode.html" t="n">YamlNode</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Known subtypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block subtypes">
+                <div>
+                 trait <a href="yaml/YamlMapping.html" t="n">YamlMapping</a>
+                </div>
+                <div>
+                 class <a href="yaml/YamlCollectionFacade.html" t="n">YamlCollectionFacade</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlSequence.html" t="n">YamlSequence</a>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"></span><span class="kind"><span t="k">class </span></span><a href="yaml/YamlCollectionFacade.html" t="n" class="documentableName ">YamlCollectionFacade</a><span t="k"> extends </span><a href="yaml/YamlMapping.html" t="t">YamlMapping</a><span t="k">, </span></span><span class="signature-long"><a href="yaml/YamlSequence.html" t="t">YamlSequence</a></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Assumes either YAML mapping or YAML sequence.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Assumes either YAML mapping or YAML sequence.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               See also
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <p><a href="yaml.html#yamlCollectionFacadeConversion-0">yamlCollectionFacadeConversion</a></p>
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Note
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <p>A collection facade is created by conversion only.</p>
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <a href="yaml/YamlSequence.html" t="n">YamlSequence</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlMapping.html" t="n">YamlMapping</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlCollection.html" t="n">YamlCollection</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlNode.html" t="n">YamlNode</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span class="show-all-code show-content text-button h100">Show all</span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div>
+           <span class="annotations monospace"><span data-unresolved-link="" t="t">@FunctionalInterface</span> </span>
+          </div>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">trait </span></span><a href="yaml/YamlConstructor.html" t="n" class="documentableName ">YamlConstructor</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML constructor.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML constructor.</p>
+              <div class="snippet mono-small-block">
+               <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>import scala.language.implicitConversions
+</span><span line-number="2" class=""><span class="tooltip-container"></span>
+</span><span line-number="3" class=""><span class="tooltip-container"></span>import shampoo.yaml.{ *, given }
+</span><span line-number="4" class=""><span class="tooltip-container"></span>
+</span><span line-number="5" class=""><span class="tooltip-container"></span>case class User(id: Int, name: String)
+</span><span line-number="6" class=""><span class="tooltip-container"></span>
+</span><span line-number="7" class=""><span class="tooltip-container"></span>// Define how to construct User from YAML
+</span><span line-number="8" class=""><span class="tooltip-container"></span>given YamlConstructor[User] =
+</span><span line-number="9" class=""><span class="tooltip-container"></span>  yaml =&gt; User(yaml("id"), yaml("name"))
+</span><span line-number="10" class=""><span class="tooltip-container"></span>
+</span><span line-number="11" class=""><span class="tooltip-container"></span>val yaml = Yaml.load("{ id: 1000, name: lupita }")
+</span><span line-number="12" class=""><span class="tooltip-container"></span>
+</span><span line-number="13" class=""><span class="tooltip-container"></span>// Construct and verify
+</span><span line-number="14" class=""><span class="tooltip-container"></span>val user = yaml.as[User]
+</span><span line-number="15" class=""><span class="tooltip-container"></span>assert(user.id == 1000)
+</span><span line-number="16" class=""><span class="tooltip-container"></span>assert(user.name == "lupita")
+</span></code></pre>
+               <div class="buttons"></div>
+              </div>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               See also
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <p><a href="yaml/YamlRepresenter.html">YamlRepresenter</a></p>
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"></span><span class="kind"><span t="k">class </span></span><a href="yaml/YamlException.html" t="n" class="documentableName ">YamlException</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">message</span>: <span data-unresolved-link="" t="t">String</span>, <span t="k"></span><span data-unresolved-link="" t="n">cause</span>: <span data-unresolved-link="" t="t">Throwable</span>)<span t="k"> extends </span><span data-unresolved-link="" t="t">RuntimeException</span></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML exception.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML exception.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               cause
+              </dt>
+              <dd class="body-medium">
+               <p>underlying cause</p>
+              </dd>
+              <dt class="body-small">
+               message
+              </dt>
+              <dd class="body-medium">
+               <p>detail message</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Constructor
+              </dt>
+              <dd class="body-medium">
+               <p>Creates exception with message and cause.</p>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 class <span data-unresolved-link="" t="n">RuntimeException</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Exception</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Throwable</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Serializable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span class="show-all-code show-content text-button h100">Show all</span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Known subtypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block subtypes">
+                <div>
+                 class <a href="yaml/YamlExpectationError.html" t="n">YamlExpectationError</a>
+                </div>
+                <div>
+                 class <a href="yaml/YamlMappingError.html" t="n">YamlMappingError</a>
+                </div>
+                <div>
+                 class <a href="yaml/YamlSequenceError.html" t="n">YamlSequenceError</a>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="case">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">case </span></span><span class="kind"><span t="k">class </span></span><a href="yaml/YamlExpectationError.html" t="n" class="documentableName ">YamlExpectationError</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">expected</span>: <span data-unresolved-link="" t="t">Class</span>[<span t="k">_</span>], <span t="k"></span><span data-unresolved-link="" t="n">actual</span>: <span data-unresolved-link="" t="t">Class</span>[<span t="k">_</span>])<span t="k"> extends </span><a href="yaml/YamlException.html" t="t">YamlException</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML expectation error.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML expectation error.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               actual
+              </dt>
+              <dd class="body-medium">
+               <p>class</p>
+              </dd>
+              <dt class="body-small">
+               expected
+              </dt>
+              <dd class="body-medium">
+               <p>class</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <span data-unresolved-link="" t="n">Product</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Equals</span>
+                </div>
+                <div>
+                 class <a href="yaml/YamlException.html" t="n">YamlException</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">RuntimeException</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Exception</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Throwable</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Serializable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span class="show-all-code show-content text-button h100">Show all</span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="sealed">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">sealed </span></span><span class="kind"><span t="k">trait </span></span><a href="yaml/YamlMapping.html" t="n" class="documentableName ">YamlMapping</a><span t="k"> extends </span><a href="yaml/YamlCollection.html" t="t">YamlCollection</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML mapping.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML mapping.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               See also
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <p><a href="yaml/YamlMappingBuilder.html">YamlMappingBuilder</a></p>
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <a href="yaml/YamlCollection.html" t="n">YamlCollection</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlNode.html" t="n">YamlNode</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Known subtypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block subtypes">
+                <div>
+                 class <a href="yaml/YamlCollectionFacade.html" t="n">YamlCollectionFacade</a>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">class </span></span><a href="yaml/YamlMappingBuilder.html" t="n" class="documentableName ">YamlMappingBuilder</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML mapping builder.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML mapping builder.</p>
+              <div class="snippet mono-small-block">
+               <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>import scala.language.implicitConversions
+</span><span line-number="2" class=""><span class="tooltip-container"></span>
+</span><span line-number="3" class=""><span class="tooltip-container"></span>import shampoo.yaml.{ *, given }
+</span><span line-number="4" class=""><span class="tooltip-container"></span>
+</span><span line-number="5" class=""><span class="tooltip-container"></span>val user = YamlMappingBuilder()
+</span><span line-number="6" class=""><span class="tooltip-container"></span>  .add("id", 1000)
+</span><span line-number="7" class=""><span class="tooltip-container"></span>  .add("name", "lupita")
+</span><span line-number="8" class=""><span class="tooltip-container"></span>  .add("groups", Set("lupita", "sudoer"))
+</span><span line-number="9" class=""><span class="tooltip-container"></span>  .toYamlMapping()
+</span><span line-number="10" class=""><span class="tooltip-container"></span>
+</span><span line-number="11" class=""><span class="tooltip-container"></span>assert { user("id").as[Int] == 1000 }
+</span><span line-number="12" class=""><span class="tooltip-container"></span>assert { user("name").as[String] == "lupita" }
+</span><span line-number="13" class=""><span class="tooltip-container"></span>assert { user("groups").as[Set[String]] == Set("lupita", "sudoer") }
+</span></code></pre>
+               <div class="buttons"></div>
+              </div>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               See also
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <p><a href="yaml/YamlMapping.html">YamlMapping</a></p>
+                </div>
+                <div>
+                 <p><a href="yaml/YamlSequenceBuilder.html">YamlSequenceBuilder</a></p>
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="case">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">case </span></span><span class="kind"><span t="k">class </span></span><a href="yaml/YamlMappingError.html" t="n" class="documentableName ">YamlMappingError</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>, <span t="k"></span><span data-unresolved-link="" t="n">cause</span>: <span data-unresolved-link="" t="t">Exception</span>)<span t="k"> extends </span><a href="yaml/YamlException.html" t="t">YamlException</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML mapping error.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML mapping error.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               cause
+              </dt>
+              <dd class="body-medium">
+               <p>underlying cause</p>
+              </dd>
+              <dt class="body-small">
+               key
+              </dt>
+              <dd class="body-medium">
+               <p>mapping key</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <span data-unresolved-link="" t="n">Product</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Equals</span>
+                </div>
+                <div>
+                 class <a href="yaml/YamlException.html" t="n">YamlException</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">RuntimeException</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Exception</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Throwable</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Serializable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span class="show-all-code show-content text-button h100">Show all</span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="sealed">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"><span t="k">sealed </span></span><span class="kind"><span t="k">trait </span></span><a href="yaml/YamlNode.html" t="n" class="documentableName ">YamlNode</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML node.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML node.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Known subtypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block subtypes">
+                <div>
+                 trait <a href="yaml/YamlCollection.html" t="n">YamlCollection</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlMapping.html" t="n">YamlMapping</a>
+                </div>
+                <div>
+                 class <a href="yaml/YamlCollectionFacade.html" t="n">YamlCollectionFacade</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlSequence.html" t="n">YamlSequence</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlScalar.html" t="n">YamlScalar</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlBoolean.html" t="n">YamlBoolean</a>
+                </div>
+                <div>
+                 object <a href="yaml/YamlNull$.html" t="n">YamlNull</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlNumber.html" t="n">YamlNumber</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlString.html" t="n">YamlString</a>
+                </div><span class="show-all-code show-content text-button h100">Show all</span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="case">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">case </span></span><span class="kind"><span t="k">object </span></span><a href="yaml/YamlNull$.html" t="n" class="documentableName ">YamlNull</a><span t="k"> extends </span><a href="yaml/YamlScalar.html" t="t">YamlScalar</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML null.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML null.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <span data-unresolved-link="" t="n">Singleton</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Product</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Mirror</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Serializable</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Product</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Equals</span>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlScalar.html" t="n">YamlScalar</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlNode.html" t="n">YamlNode</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span class="show-all-code show-content text-button h100">Show all</span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Self type
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <span></span>
+                <div>
+                 <a href="yaml/YamlNull$.html" t="n">YamlNull</a>.<span t="k">type</span>
+                </div>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="sealed">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">sealed </span></span><span class="kind"><span t="k">trait </span></span><a href="yaml/YamlNumber.html" t="n" class="documentableName ">YamlNumber</a><span t="k"> extends </span><a href="yaml/YamlScalar.html" t="t">YamlScalar</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML number.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML number.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Companion
+              </dt>
+              <dd class="body-medium">
+               <a href="yaml/YamlNumber$.html">object</a>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <a href="yaml/YamlScalar.html" t="n">YamlScalar</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlNode.html" t="n">YamlNode</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">object </span></span><a href="yaml/YamlNumber$.html" t="n" class="documentableName ">YamlNumber</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Provides YAML number constructor.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Provides YAML number constructor.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Companion
+              </dt>
+              <dd class="body-medium">
+               <a href="yaml/YamlNumber.html">trait</a>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <span data-unresolved-link="" t="n">Sum</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Mirror</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Self type
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <span></span>
+                <div>
+                 <a href="yaml/YamlNumber$.html" t="n">YamlNumber</a>.<span t="k">type</span>
+                </div>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div>
+           <span class="annotations monospace"><span data-unresolved-link="" t="t">@FunctionalInterface</span> </span>
+          </div>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">trait </span></span><a href="yaml/YamlRepresenter.html" t="n" class="documentableName ">YamlRepresenter</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML representer.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML representer.</p>
+              <div class="snippet mono-small-block">
+               <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>import scala.language.implicitConversions
+</span><span line-number="2" class=""><span class="tooltip-container"></span>
+</span><span line-number="3" class=""><span class="tooltip-container"></span>import shampoo.yaml.{ *, given }
+</span><span line-number="4" class=""><span class="tooltip-container"></span>
+</span><span line-number="5" class=""><span class="tooltip-container"></span>case class User(id: Int, name: String, groups: Seq[String])
+</span><span line-number="6" class=""><span class="tooltip-container"></span>
+</span><span line-number="7" class=""><span class="tooltip-container"></span>// Define how to represent YAML from User
+</span><span line-number="8" class=""><span class="tooltip-container"></span>given YamlRepresenter[User] =
+</span><span line-number="9" class=""><span class="tooltip-container"></span>  user =&gt; Yaml.map("id" -&gt; user.id, "name" -&gt; user.name)
+</span><span line-number="10" class=""><span class="tooltip-container"></span>
+</span><span line-number="11" class=""><span class="tooltip-container"></span>val user = User(1000, "lupita")
+</span><span line-number="12" class=""><span class="tooltip-container"></span>
+</span><span line-number="13" class=""><span class="tooltip-container"></span>// Represent and verify
+</span><span line-number="14" class=""><span class="tooltip-container"></span>val yaml = Yaml.toYaml(user)
+</span><span line-number="15" class=""><span class="tooltip-container"></span>assert(yaml.getInt("id") == 1000)
+</span><span line-number="16" class=""><span class="tooltip-container"></span>assert(yaml.getString("name") == "lupita")
+</span></code></pre>
+               <div class="buttons"></div>
+              </div>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               See also
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <p><a href="yaml/YamlConstructor.html">YamlConstructor</a></p>
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="sealed">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">sealed </span></span><span class="kind"><span t="k">trait </span></span><a href="yaml/YamlScalar.html" t="n" class="documentableName ">YamlScalar</a><span t="k"> extends </span><a href="yaml/YamlNode.html" t="t">YamlNode</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML scalar.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML scalar.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <a href="yaml/YamlNode.html" t="n">YamlNode</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Known subtypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block subtypes">
+                <div>
+                 trait <a href="yaml/YamlBoolean.html" t="n">YamlBoolean</a>
+                </div>
+                <div>
+                 object <a href="yaml/YamlNull$.html" t="n">YamlNull</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlNumber.html" t="n">YamlNumber</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlString.html" t="n">YamlString</a>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="sealed">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">sealed </span></span><span class="kind"><span t="k">trait </span></span><a href="yaml/YamlSequence.html" t="n" class="documentableName ">YamlSequence</a><span t="k"> extends </span><a href="yaml/YamlCollection.html" t="t">YamlCollection</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML sequence.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML sequence.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               See also
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <p><a href="yaml/YamlSequenceBuilder.html">YamlSequenceBuilder</a></p>
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <a href="yaml/YamlCollection.html" t="n">YamlCollection</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlNode.html" t="n">YamlNode</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Known subtypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block subtypes">
+                <div>
+                 class <a href="yaml/YamlCollectionFacade.html" t="n">YamlCollectionFacade</a>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">class </span></span><a href="yaml/YamlSequenceBuilder.html" t="n" class="documentableName ">YamlSequenceBuilder</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML sequence builder.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML sequence builder.</p>
+              <div class="snippet mono-small-block">
+               <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>import scala.language.implicitConversions
+</span><span line-number="2" class=""><span class="tooltip-container"></span>
+</span><span line-number="3" class=""><span class="tooltip-container"></span>import shampoo.yaml.{ *, given }
+</span><span line-number="4" class=""><span class="tooltip-container"></span>
+</span><span line-number="5" class=""><span class="tooltip-container"></span>val user = YamlSequenceBuilder()
+</span><span line-number="6" class=""><span class="tooltip-container"></span>  .add(1000)
+</span><span line-number="7" class=""><span class="tooltip-container"></span>  .add("lupita")
+</span><span line-number="8" class=""><span class="tooltip-container"></span>  .add(Set("lupita", "sudoer"))
+</span><span line-number="9" class=""><span class="tooltip-container"></span>  .toYamlSequence()
+</span><span line-number="10" class=""><span class="tooltip-container"></span>
+</span><span line-number="11" class=""><span class="tooltip-container"></span>assert { user(0).as[Int] == 1000 }
+</span><span line-number="12" class=""><span class="tooltip-container"></span>assert { user(1).as[String] == "lupita" }
+</span><span line-number="13" class=""><span class="tooltip-container"></span>assert { user(2).as[Set[String]] == Set("lupita", "sudoer") }
+</span></code></pre>
+               <div class="buttons"></div>
+              </div>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               See also
+              </dt>
+              <dd class="body-medium">
+               <div>
+                <div>
+                 <p><a href="yaml/YamlSequence.html">YamlSequence</a></p>
+                </div>
+                <div>
+                 <p><a href="yaml/YamlMappingBuilder.html">YamlMappingBuilder</a></p>
+                </div>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="case">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">case </span></span><span class="kind"><span t="k">class </span></span><a href="yaml/YamlSequenceError.html" t="n" class="documentableName ">YamlSequenceError</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>, <span t="k"></span><span data-unresolved-link="" t="n">cause</span>: <span data-unresolved-link="" t="t">Exception</span>)<span t="k"> extends </span><a href="yaml/YamlException.html" t="t">YamlException</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML sequence error.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML sequence error.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               cause
+              </dt>
+              <dd class="body-medium">
+               <p>underlying cause</p>
+              </dd>
+              <dt class="body-small">
+               index
+              </dt>
+              <dd class="body-medium">
+               <p>sequence index</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <span data-unresolved-link="" t="n">Product</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Equals</span>
+                </div>
+                <div>
+                 class <a href="yaml/YamlException.html" t="n">YamlException</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">RuntimeException</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Exception</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Throwable</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Serializable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span class="show-all-code show-content text-button h100">Show all</span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" data-f-keywords="sealed">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="signature-short"><span class="modifiers"><span t="k">sealed </span></span><span class="kind"><span t="k">trait </span></span><a href="yaml/YamlString.html" t="n" class="documentableName ">YamlString</a><span t="k"> extends </span><a href="yaml/YamlScalar.html" t="t">YamlScalar</a></span><span class="signature-long"></span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Defines YAML string.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Defines YAML string.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Companion
+              </dt>
+              <dd class="body-medium">
+               <a href="yaml/YamlString$.html">object</a>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <a href="yaml/YamlScalar.html" t="n">YamlScalar</a>
+                </div>
+                <div>
+                 trait <a href="yaml/YamlNode.html" t="n">YamlNode</a>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">object </span></span><a href="yaml/YamlString$.html" t="n" class="documentableName ">YamlString</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Provides YAML string constructor.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Provides YAML string constructor.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Companion
+              </dt>
+              <dd class="body-medium">
+               <a href="yaml/YamlString.html">trait</a>
+              </dd>
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 trait <span data-unresolved-link="" t="n">Sum</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Mirror</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Self type
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <span></span>
+                <div>
+                 <a href="yaml/YamlString$.html" t="n">YamlString</a>.<span t="k">type</span>
+                </div>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </section>
+    <section id="Givens">
+     <div data-togglable="Givens" class="tab expand">
+      <div class="member-group-header">
+       <h3 data-togglable="Givens" class="h400">Givens</h3>
+      </div>
+      <section id="Givens">
+       <div class="documentableList expand">
+        <div class="documentableList-expander">
+         <button class="icon-button show-content expand"></button>
+         <h4 class="groupHeader h200">Givens</h4>
+        </div>
+        <div class="documentableElement" id="arrayConstructor-fffff722">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#arrayConstructor-fffff722" t="n" class="documentableName ">arrayConstructor</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>])(<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">ctag</span>: <span data-unresolved-link="" t="t">ClassTag</span>[<span t="t">T</span>]): <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">Array</span>[<span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Array</code> from <code>YamlSequence</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Array</code> from <code>YamlSequence</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="arrayRepresenter-fffff8fd">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#arrayRepresenter-fffff8fd" t="n" class="documentableName ">arrayRepresenter</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">representer</span>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span t="t">T</span>]): <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">Array</span>[<span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Array</code> to <code>YamlSequence</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Array</code> to <code>YamlSequence</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="bigDecimalConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#bigDecimalConstructor-0" t="n" class="documentableName ">bigDecimalConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">BigDecimal</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>BigDecimal</code> from <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>BigDecimal</code> from <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="bigDecimalRepresenter-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#bigDecimalRepresenter-0" t="n" class="documentableName ">bigDecimalRepresenter</a>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">BigDecimal</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>BigDecimal</code> to <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>BigDecimal</code> to <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="bigIntConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#bigIntConstructor-0" t="n" class="documentableName ">bigIntConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">BigInt</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>BigInt</code> from <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>BigInt</code> from <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="bigIntRepresenter-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#bigIntRepresenter-0" t="n" class="documentableName ">bigIntRepresenter</a>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">BigInt</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>BigInt</code> to <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>BigInt</code> to <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="booleanConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#booleanConstructor-0" t="n" class="documentableName ">booleanConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">Boolean</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Boolean</code> from <code>YamlBoolean</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Boolean</code> from <code>YamlBoolean</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="booleanRepresenter-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#booleanRepresenter-0" t="n" class="documentableName ">booleanRepresenter</a>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">Boolean</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Boolean</code> to <code>YamlBoolean</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Boolean</code> to <code>YamlBoolean</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="doubleConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#doubleConstructor-0" t="n" class="documentableName ">doubleConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">Double</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Double</code> from <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Double</code> from <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="doubleRepresenter-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#doubleRepresenter-0" t="n" class="documentableName ">doubleRepresenter</a>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">Double</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Double</code> to <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Double</code> to <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="eitherConstructor-fffffd53">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#eitherConstructor-fffffd53" t="n" class="documentableName ">eitherConstructor</a>[<span t="k"></span><span data-unresolved-link="" t="t">A</span>, <span t="k"></span><span data-unresolved-link="" t="t">B</span>](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">left</span>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">A</span>])(<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">right</span>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">B</span>]): <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">Either</span>[<span data-unresolved-link="" t="t">A</span>, <span data-unresolved-link="" t="t">B</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Either</code> from <code>YamlNode</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Either</code> from <code>YamlNode</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="eitherRepresenter-8e5">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#eitherRepresenter-8e5" t="n" class="documentableName ">eitherRepresenter</a>[<span t="k"></span><span data-unresolved-link="" t="t">A</span>, <span t="k"></span><span data-unresolved-link="" t="t">B</span>, <span t="k"></span><span data-unresolved-link="" t="t">C</span><span t="k"> &lt;: </span>(<span data-unresolved-link="" t="t">Either</span>)](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">left</span>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span t="t">A</span>])(<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">right</span>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span t="t">B</span>]): <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">C</span>[<span data-unresolved-link="" t="t">A</span>, <span data-unresolved-link="" t="t">B</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Either</code> to <code>YamlNode</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Either</code> to <code>YamlNode</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="failureRepresenter-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#failureRepresenter-0" t="n" class="documentableName ">failureRepresenter</a>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">Failure</span>[<span t="k">_</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Failure</code> to <code>YamlNull</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Failure</code> to <code>YamlNull</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="floatConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#floatConstructor-0" t="n" class="documentableName ">floatConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">Float</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Float</code> from <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Float</code> from <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="floatRepresenter-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#floatRepresenter-0" t="n" class="documentableName ">floatRepresenter</a>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">Float</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Float</code> to <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Float</code> to <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="intConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#intConstructor-0" t="n" class="documentableName ">intConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">Int</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Int</code> from <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Int</code> from <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="intRepresenter-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#intRepresenter-0" t="n" class="documentableName ">intRepresenter</a>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">Int</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Int</code> to <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Int</code> to <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="iterableConstructor-e0a">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#iterableConstructor-e0a" t="n" class="documentableName ">iterableConstructor</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>, <span t="k"></span><span data-unresolved-link="" t="t">C</span><span t="k"> &lt;: </span>(<span data-unresolved-link="" t="t">Iterable</span>)](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>])(<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">factory</span>: <span data-unresolved-link="" t="t">Factory</span>[<span t="t">T</span>, <span t="t">C</span>[<span t="t">T</span>]]): <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">C</span>[<span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Iterable</code> from <code>YamlSequence</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Iterable</code> from <code>YamlSequence</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="iterableRepresenter-1fe">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#iterableRepresenter-1fe" t="n" class="documentableName ">iterableRepresenter</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>, <span t="k"></span><span data-unresolved-link="" t="t">C</span><span t="k"> &lt;: </span>(<span data-unresolved-link="" t="t">Iterable</span>)](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">representer</span>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span t="t">T</span>]): <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">C</span>[<span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Iterable</code> to <code>YamlSequence</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Iterable</code> to <code>YamlSequence</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="leftRepresenter-fffff8fd">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#leftRepresenter-fffff8fd" t="n" class="documentableName ">leftRepresenter</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">representer</span>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span t="t">T</span>]): <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">Left</span>[<span data-unresolved-link="" t="t">T</span>, <span t="k">_</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Left</code> to <code>YamlNode</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Left</code> to <code>YamlNode</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="longConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#longConstructor-0" t="n" class="documentableName ">longConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">Long</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Long</code> from <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Long</code> from <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="longRepresenter-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#longRepresenter-0" t="n" class="documentableName ">longRepresenter</a>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">Long</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Long</code> to <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Long</code> to <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="mapConstructor-e0a">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#mapConstructor-e0a" t="n" class="documentableName ">mapConstructor</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>, <span t="k"></span><span data-unresolved-link="" t="t">C</span><span t="k"> &lt;: </span>([<span t="t">T</span>]<span t="k"> =&gt;&gt; </span><span data-unresolved-link="" t="t">Map</span>[<span data-unresolved-link="" t="t">String</span>, <span t="t">T</span>])](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>])(<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">factory</span>: <span data-unresolved-link="" t="t">Factory</span>[(<span data-unresolved-link="" t="t">String</span>, <span t="t">T</span>), <span t="t">C</span>[<span t="t">T</span>]]): <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">C</span>[<span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Map</code> from <code>YamlNode</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Map</code> from <code>YamlNode</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="mapRepresenter-1fe">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#mapRepresenter-1fe" t="n" class="documentableName ">mapRepresenter</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>, <span t="k"></span><span data-unresolved-link="" t="t">C</span><span t="k"> &lt;: </span>([<span t="t">T</span>]<span t="k"> =&gt;&gt; </span><span data-unresolved-link="" t="t">Map</span>[<span data-unresolved-link="" t="t">String</span>, <span t="t">T</span>])](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">representer</span>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span t="t">T</span>]): <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">C</span>[<span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Map</code> to <code>YamlMapping</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Map</code> to <code>YamlMapping</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="noneRepresenter-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#noneRepresenter-0" t="n" class="documentableName ">noneRepresenter</a>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">None</span>.<span t="k">type</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>None</code> to <code>YamlNull</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>None</code> to <code>YamlNull</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="optionConstructor-3c7">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#optionConstructor-3c7" t="n" class="documentableName ">optionConstructor</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>]): <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">Option</span>[<span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Option</code> from <code>YamlNode</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Option</code> from <code>YamlNode</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="optionRepresenter-1fe">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#optionRepresenter-1fe" t="n" class="documentableName ">optionRepresenter</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>, <span t="k"></span><span data-unresolved-link="" t="t">C</span><span t="k"> &lt;: </span>(<span data-unresolved-link="" t="t">Option</span>)](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">representer</span>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span t="t">T</span>]): <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">C</span>[<span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Some</code> to <code>YamlNode</code> or returns <code>YamlNull</code> if <code>None</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Some</code> to <code>YamlNode</code> or returns <code>YamlNull</code> if <code>None</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="rightRepresenter-fffff8fd">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#rightRepresenter-fffff8fd" t="n" class="documentableName ">rightRepresenter</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">representer</span>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span t="t">T</span>]): <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">Right</span>[<span t="k">_</span>, <span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Right</code> to <code>YamlNode</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Right</code> to <code>YamlNode</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="stringConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#stringConstructor-0" t="n" class="documentableName ">stringConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">String</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>String</code> from <code>YamlString</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>String</code> from <code>YamlString</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="stringRepresenter-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#stringRepresenter-0" t="n" class="documentableName ">stringRepresenter</a>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">String</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>String</code> to <code>YamlString</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>String</code> to <code>YamlString</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="tryConstructor-3c7">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#tryConstructor-3c7" t="n" class="documentableName ">tryConstructor</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>]): <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span data-unresolved-link="" t="t">Try</span>[<span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Constructs <code>Try</code> from <code>YamlNode</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Constructs <code>Try</code> from <code>YamlNode</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="tryRepresenter-1fe">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#tryRepresenter-1fe" t="n" class="documentableName ">tryRepresenter</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>, <span t="k"></span><span data-unresolved-link="" t="t">C</span><span t="k"> &lt;: </span>(<span data-unresolved-link="" t="t">Try</span>)](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">representer</span>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span t="t">T</span>]): <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span data-unresolved-link="" t="t">C</span>[<span data-unresolved-link="" t="t">T</span>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Represents <code>Success</code> to <code>YamlNode</code> or returns <code>YamlNull</code> if <code>Failure</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Represents <code>Success</code> to <code>YamlNode</code> or returns <code>YamlNull</code> if <code>Failure</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="yamlBooleanConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#yamlBooleanConstructor-0" t="n" class="documentableName ">yamlBooleanConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<a href="yaml/YamlBoolean.html" t="t">YamlBoolean</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Casts <code>YamlNode</code> to <code>YamlBoolean</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Casts <code>YamlNode</code> to <code>YamlBoolean</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="yamlCollectionFacadeConversion-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#yamlCollectionFacadeConversion-0" t="n" class="documentableName ">yamlCollectionFacadeConversion</a>: <span data-unresolved-link="" t="t">Conversion</span>[<a href="yaml/YamlNode.html" t="t">YamlNode</a>, <a href="yaml/YamlCollectionFacade.html" t="t">YamlCollectionFacade</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Converts <code>YamlNode</code> to <code>YamlCollectionFacade</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Converts <code>YamlNode</code> to <code>YamlCollectionFacade</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="yamlConstructorConversion-1a">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#yamlConstructorConversion-1a" t="n" class="documentableName ">yamlConstructorConversion</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">constructor</span>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<span t="t">T</span>]): <span data-unresolved-link="" t="t">Conversion</span>[<a href="yaml/YamlNode.html" t="t">YamlNode</a>, <span data-unresolved-link="" t="t">T</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Applies conversion using <code>YamlConstructor</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Applies conversion using <code>YamlConstructor</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="yamlNodeConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#yamlNodeConstructor-0" t="n" class="documentableName ">yamlNodeConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<a href="yaml/YamlNode.html" t="t">YamlNode</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Returns <code>YamlNode</code> as is.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Returns <code>YamlNode</code> as is.</p>
+              <p>This constructor is required to perform actions such as the following:</p>
+              <div class="snippet mono-small-block">
+               <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>import scala.language.implicitConversions
+</span><span line-number="2" class=""><span class="tooltip-container"></span>
+</span><span line-number="3" class=""><span class="tooltip-container"></span>import shampoo.yaml.{ Yaml, YamlNode, given }
+</span><span line-number="4" class=""><span class="tooltip-container"></span>
+</span><span line-number="5" class=""><span class="tooltip-container"></span>val yaml = Yaml.map("values" -&gt; Yaml.seq("abc", 123, true))
+</span><span line-number="6" class=""><span class="tooltip-container"></span>
+</span><span line-number="7" class=""><span class="tooltip-container"></span>// Requires yamlNodeConstructor
+</span><span line-number="8" class=""><span class="tooltip-container"></span>val list = yaml("values").as[List[YamlNode]]
+</span></code></pre>
+               <div class="buttons"></div>
+              </div>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="yamlNullConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#yamlNullConstructor-0" t="n" class="documentableName ">yamlNullConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<a href="yaml/YamlNull$.html" t="t">YamlNull</a>.<span t="k">type</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Casts <code>YamlNode</code> to <code>YamlNull</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Casts <code>YamlNode</code> to <code>YamlNull</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="yamlNumberConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#yamlNumberConstructor-0" t="n" class="documentableName ">yamlNumberConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<a href="yaml/YamlNumber.html" t="t">YamlNumber</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Casts <code>YamlNode</code> to <code>YamlNumber</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Casts <code>YamlNode</code> to <code>YamlNumber</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="yamlObjectConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#yamlObjectConstructor-0" t="n" class="documentableName ">yamlObjectConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<a href="yaml/YamlMapping.html" t="t">YamlMapping</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Casts <code>YamlNode</code> to <code>YamlMapping</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Casts <code>YamlNode</code> to <code>YamlMapping</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="yamlRepresenterConversion-ff5">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#yamlRepresenterConversion-ff5" t="n" class="documentableName ">yamlRepresenterConversion</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span>](<span t="k">using </span><span t="k"></span><span data-unresolved-link="" t="n">representer</span>: <a href="yaml/YamlRepresenter.html" t="t">YamlRepresenter</a>[<span t="t">T</span>]): <span data-unresolved-link="" t="t">Conversion</span>[<span data-unresolved-link="" t="t">T</span>, <a href="yaml/YamlNode.html" t="t">YamlNode</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Applies conversion using <code>YamlRepresenter</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Applies conversion using <code>YamlRepresenter</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="yamlSequenceConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#yamlSequenceConstructor-0" t="n" class="documentableName ">yamlSequenceConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<a href="yaml/YamlSequence.html" t="t">YamlSequence</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Casts <code>YamlNode</code> to <code>YamlSequence</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Casts <code>YamlNode</code> to <code>YamlSequence</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="yamlStringConstructor-0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">given </span></span><a href="yaml.html#yamlStringConstructor-0" t="n" class="documentableName ">yamlStringConstructor</a>: <a href="yaml/YamlConstructor.html" t="t">YamlConstructor</a>[<a href="yaml/YamlString.html" t="t">YamlString</a>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Casts <code>YamlNode</code> to <code>YamlString</code>.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Casts <code>YamlNode</code> to <code>YamlString</code>.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </section>
+    <section id="Extensions">
+     <div data-togglable="Extensions" class="tab expand">
+      <div class="member-group-header">
+       <h3 data-togglable="Extensions" class="h400">Extensions</h3>
+      </div>
+      <section id="Extensions">
+       <div class="documentableList expand">
+        <div class="documentableList-expander">
+         <button class="icon-button show-content expand"></button>
+         <h4 class="groupHeader h200">Extensions</h4>
+        </div>
+        <div>
+         <span class="groupHeader"><span t="k">extension </span>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">yaml</span>: <a href="yaml/YamlNode.html" t="t">YamlNode</a>)</span>
+         <div class="documentableElement" id="\-fffff15b">
+          <div class="documentableElement-expander">
+           <button class="icon-button ar show-content"></button>
+           <div class="header monospace mono-medium">
+            <div class="signature">
+             <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="yaml.html#\-fffff15b" t="n" class="documentableName ">\</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <a href="yaml/YamlNode.html" t="t">YamlNode</a>
+            </div>
+           </div>
+          </div>
+          <div class="docs">
+           <span class="modifiers"></span>
+           <div>
+            <div class="originInfo"></div>
+            <div class="memberDocumentation">
+             <div class="documentableBrief doc">
+              <p>Gets value in YAML mapping.</p>
+             </div>
+             <div class="cover">
+              <div class="doc">
+               <p>Gets value in YAML mapping.</p>
+              </div>
+              <h2 class="h200">Value parameters</h2>
+              <dl class="attributes attributes-small">
+               <dt class="body-small">
+                key
+               </dt>
+               <dd class="body-medium">
+                <p>mapping key</p>
+               </dd>
+              </dl>
+              <h2 class="h200">Attributes</h2>
+              <dl class="attributes attributes-small">
+               <dt class="body-small">
+                Throws
+               </dt>
+               <dd class="body-medium">
+                <div>
+                 <div>
+                  <span data-unresolved-link="">ClassCastException</span>
+                  <p>if not <a href="yaml/YamlMapping.html">YamlMapping</a></p>
+                 </div>
+                </div>
+               </dd>
+              </dl>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="documentableElement" id="\-9b">
+          <div class="documentableElement-expander">
+           <button class="icon-button ar show-content"></button>
+           <div class="header monospace mono-medium">
+            <div class="signature">
+             <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="yaml.html#\-9b" t="n" class="documentableName ">\</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">index</span>: <span data-unresolved-link="" t="t">Int</span>): <a href="yaml/YamlNode.html" t="t">YamlNode</a>
+            </div>
+           </div>
+          </div>
+          <div class="docs">
+           <span class="modifiers"></span>
+           <div>
+            <div class="originInfo"></div>
+            <div class="memberDocumentation">
+             <div class="documentableBrief doc">
+              <p>Gets value in YAML sequence.</p>
+             </div>
+             <div class="cover">
+              <div class="doc">
+               <p>Gets value in YAML sequence.</p>
+              </div>
+              <h2 class="h200">Value parameters</h2>
+              <dl class="attributes attributes-small">
+               <dt class="body-small">
+                index
+               </dt>
+               <dd class="body-medium">
+                <p>sequence index</p>
+               </dd>
+              </dl>
+              <h2 class="h200">Attributes</h2>
+              <dl class="attributes attributes-small">
+               <dt class="body-small">
+                Throws
+               </dt>
+               <dd class="body-medium">
+                <div>
+                 <div>
+                  <span data-unresolved-link="">ClassCastException</span>
+                  <p>if not <a href="yaml/YamlSequence.html">YamlSequence</a></p>
+                 </div>
+                </div>
+               </dd>
+              </dl>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="documentableElement" id="\\-fffff6a1">
+          <div class="documentableElement-expander">
+           <button class="icon-button ar show-content"></button>
+           <div class="header monospace mono-medium">
+            <div class="signature">
+             <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="yaml.html#\\-fffff6a1" t="n" class="documentableName ">\\</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">key</span>: <span data-unresolved-link="" t="t">String</span>): <span data-unresolved-link="" t="t">Seq</span>[<a href="yaml/YamlNode.html" t="t">YamlNode</a>]
+            </div>
+           </div>
+          </div>
+          <div class="docs">
+           <span class="modifiers"></span>
+           <div>
+            <div class="originInfo"></div>
+            <div class="memberDocumentation">
+             <div class="documentableBrief doc">
+              <p>Collects values with given key in traversed collections.</p>
+             </div>
+             <div class="cover">
+              <div class="doc">
+               <p>Collects values with given key in traversed collections.</p>
+               <div class="snippet mono-small-block">
+                <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>import shampoo.yaml.{ Yaml, \\, given }
+</span><span line-number="2" class=""><span class="tooltip-container"></span>
+</span><span line-number="3" class=""><span class="tooltip-container"></span>val yaml = Yaml.load("""
+</span><span line-number="4" class=""><span class="tooltip-container"></span> node:
+</span><span line-number="5" class=""><span class="tooltip-container"></span>   name: localhost
+</span><span line-number="6" class=""><span class="tooltip-container"></span>   users:
+</span><span line-number="7" class=""><span class="tooltip-container"></span>     - id: 0
+</span><span line-number="8" class=""><span class="tooltip-container"></span>       name: root
+</span><span line-number="9" class=""><span class="tooltip-container"></span>     - id: 1000
+</span><span line-number="10" class=""><span class="tooltip-container"></span>       name: lupita
+</span><span line-number="11" class=""><span class="tooltip-container"></span>""")
+</span><span line-number="12" class=""><span class="tooltip-container"></span>
+</span><span line-number="13" class=""><span class="tooltip-container"></span>val names = (yaml \\ "name").map(_.as[String])
+</span><span line-number="14" class=""><span class="tooltip-container"></span>
+</span><span line-number="15" class=""><span class="tooltip-container"></span>assert { names == Seq("localhost", "root", "lupita") }
+</span></code></pre>
+                <div class="buttons"></div>
+               </div>
+              </div>
+              <h2 class="h200">Value parameters</h2>
+              <dl class="attributes attributes-small">
+               <dt class="body-small">
+                key
+               </dt>
+               <dd class="body-medium">
+                <p>mappings key</p>
+               </dd>
+              </dl>
+              <h2 class="h200">Attributes</h2>
+              <dl class="attributes attributes-small"></dl>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+</section></div><div id="toc" class="body-small"><div id="toc-container"><span class="toc-title h200">In this article</span><nav class="toc-nav"><ul class="toc-list"><li><a href="#members-list">Members list</a><ul><li><a href="#Type-members">Type members</a><ul><li><a href="#Classlikes">Classlikes</a></li></ul></li><li><a href="#Givens">Givens</a><ul><li><a href="#Givens">Givens</a></li></ul></li><li><a href="#Extensions">Extensions</a><ul><li><a href="#Extensions">Extensions</a></li></ul></li></ul></li></ul></nav></div></div></div><div id="footer" class="body-small mobile-footer"><div class="left-container">Generated with</div><div class="right-container"><div class="text"></div></div><div class="text-mobile"></div></div></div></div></body></html>
