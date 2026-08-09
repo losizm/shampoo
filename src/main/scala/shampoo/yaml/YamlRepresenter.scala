@@ -19,11 +19,9 @@ package shampoo.yaml
  * Defines YAML representer.
  *
  * {{{
- * import scala.language.implicitConversions
- * 
  * import shampoo.yaml.{ *, given }
  * 
- * case class User(id: Int, name: String, groups: Seq[String])
+ * case class User(id: Int, name: String)
  * 
  * // Define how to represent YAML from User
  * given YamlRepresenter[User] =
@@ -32,7 +30,7 @@ package shampoo.yaml
  * val user = User(1000, "lupita")
  * 
  * // Represent and verify
- * val yaml = Yaml.toYaml(user)
+ * val yaml = Yaml.toYaml(user).as[YamlMapping]
  * assert(yaml.getInt("id") == 1000)
  * assert(yaml.getString("name") == "lupita")
  * }}}

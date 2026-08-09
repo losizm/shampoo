@@ -44,11 +44,9 @@ class YamlException(message: String, cause: Throwable) extends RuntimeException(
 /**
  * Defines YAML expectation error.
  *
- * @param expected class
- * @param actual class
+ * @param message describes expectation
  */
-case class YamlExpectationError(expected: Class[_], actual: Class[_])
-  extends YamlException(s"Expected ${expected.getSimpleName} instead of ${actual.getSimpleName}")
+case class YamlExpectationError(message: String) extends YamlException(message)
 
 /**
  * Defines YAML mapping error.

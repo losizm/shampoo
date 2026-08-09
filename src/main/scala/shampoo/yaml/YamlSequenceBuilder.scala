@@ -23,14 +23,12 @@ import YamlValues.*
  * Defines YAML sequence builder.
  *
  * {{{
- * import scala.language.implicitConversions
- * 
  * import shampoo.yaml.{ *, given }
  * 
  * val user = YamlSequenceBuilder()
  *    .add(1000)
  *    .add("lupita")
- *    .add(Set("lupita", "sudoer"))
+ *    .add(Yaml.seq("lupita", "sudoer"))
  *    .toYamlSequence()
  * 
  * assert { user(0).as[Int] == 1000 }

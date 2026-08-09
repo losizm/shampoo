@@ -560,30 +560,6 @@ sealed trait YamlSequence extends YamlCollection:
   def readOrElse[T](index: Int, default: => T)(using constructor: YamlConstructor[T]): T =
     readOption(index).getOrElse(default)
 
-/**
- * Assumes either YAML mapping or YAML sequence.
- *
- * @note A collection facade is created by conversion only.
- *
- * @see [[yamlCollectionFacadeConversion]]
- */
-class YamlCollectionFacade private[yaml] (node: YamlCollection) extends YamlMapping, YamlSequence:
-  def size = node.size
-
-  def keys = expect[YamlMapping](node).keys
-  def toMap = expect[YamlMapping](node).toMap
-  def contains(key: String) = expect[YamlMapping](node).contains(key)
-  def get(key: String) = expect[YamlMapping](node).get(key)
-  def apply(key: String) = expect[YamlMapping](node).apply(key)
-
-  def toSeq = expect[YamlSequence](node).toSeq
-  def apply(index: Int) = expect[YamlSequence](node).apply(index)
-
-  /** Unwraps underlying YAML collection. */
-  def unwrap: YamlCollection = node
-
-  private[yaml] def value = node.value
-
 private case class YamlStringImpl(value: String) extends YamlString
 
 private case class YamlBooleanImpl(value: Boolean) extends YamlBoolean

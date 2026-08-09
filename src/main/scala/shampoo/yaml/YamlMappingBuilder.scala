@@ -23,14 +23,12 @@ import YamlValues.*
  * Defines YAML mapping builder.
  *
  * {{{
- * import scala.language.implicitConversions
- * 
  * import shampoo.yaml.{ *, given }
  * 
  * val user = YamlMappingBuilder()
  *    .add("id", 1000)
  *    .add("name", "lupita")
- *    .add("groups", Set("lupita", "sudoer"))
+ *    .add("groups", Yaml.seq("lupita", "sudoer"))
  *    .toYamlMapping()
  * 
  * assert { user("id").as[Int] == 1000 }

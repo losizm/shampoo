@@ -8,7 +8,7 @@ The YAML library for Scala.
 To get started, add **Shampoo** to your project:
 
 ```scala
-libraryDependencies += "com.github.losizm" %% "shampoo" % "1.0.0"
+libraryDependencies += "com.github.losizm" %% "shampoo" % "2.0.0"
 ```
 
 The underlying YAML processor is provided by [SnakeYAML Engine](https://github.com/snakeyaml/snakeyaml-engine/),
@@ -21,20 +21,19 @@ such as `String`, `Int`, etc. You must define custom implementations to work
 with other types.
 
 ```scala
-import scala.language.implicitConversions
-
 import shampoo.yaml.{ *, given }
 
 case class User(id: Int, name: String, groups: Seq[String])
 
 // Define how to construct User from YAML
-given YamlConstructor[User] with
-  def construct(yaml: YamlNode) =
+given YamlConstructor[User] =
+  case node: YamlMapping =>
     User(
-      yaml("id"),
-      yaml("name"),
-      yaml("groups")
+      node.getInt("id"),
+      node.getString("name"),
+      node("groups").as[Seq[String]]
     )
+  case _ => throw YamlException("Expected YAML mapping")
 
 // Load YAML mapping
 val yaml = Yaml.load("""
@@ -44,7 +43,7 @@ val yaml = Yaml.load("""
     - lupita
     - admin
     - sudoers
-""")
+""").as[YamlMapping]
 
 // Construct and verify
 val user = yaml.as[User]
@@ -58,11 +57,11 @@ given YamlRepresenter[User] with
     Yaml.map(
       "id"     -> user.id,
       "name"   -> user.name,
-      "groups" -> user.groups
+      "groups" -> Yaml.seq(user.groups*)
     )
 
 // Represent and verify
-val yamlUser = Yaml.toYaml(user)
+val yamlUser = Yaml.toYaml(user).as[YamlMapping]
 assert(yamlUser.getInt("id") == 1000)
 assert(yamlUser.getString("name") == "lupita")
 assert(yamlUser("groups").as[Seq[String]] == Seq("lupita", "admin", "sudoers"))
@@ -100,13 +99,13 @@ val userSet  = yaml.as[Set[User]]
 val userArray = yaml.as[Array[User]]
 
 // Write Seq[User] to YamlSequence
-val yamlUsers = Yaml.toYaml(users)
-assert { yamlUsers(0).getInt("id") == 0 }
-assert { yamlUsers(0).getString("name") == "root" }
-assert { yamlUsers(0)("groups").as[Seq[String]] == Seq("root") }
-assert { yamlUsers(1).getInt("id") == 1000 }
-assert { yamlUsers(1).getString("name") == "lupita" }
-assert { yamlUsers(1)("groups").as[Seq[String]] == Seq("lupita", "admin", "sudoers") }
+val yamlUsers = Yaml.toYaml(users).as[YamlSequence]
+assert { yamlUsers.getMapping(0).getInt("id") == 0 }
+assert { yamlUsers.getMapping(0).getString("name") == "root" }
+assert { yamlUsers.getMapping(0)("groups").as[Seq[String]] == Seq("root") }
+assert { yamlUsers.getMapping(1).getInt("id") == 1000 }
+assert { yamlUsers.getMapping(1).getString("name") == "lupita" }
+assert { yamlUsers.getMapping(1)("groups").as[Seq[String]] == Seq("lupita", "admin", "sudoers") }
 ```
 
 ### Extracting Values
@@ -114,15 +113,15 @@ You can traverse `YamlMapping` and `YamlSequence` to extract nested values. The 
 extension method makes this clean and easy.
 
 ```scala
-import scala.language.implicitConversions
-
 import shampoo.yaml.{ *, given }
 
 case class User(id: Int, name: String)
 
 // Define how to construct User
 given YamlConstructor[User] =
-  yaml => User(yaml("id"), yaml("name"))
+  case node: YamlMapping => User(node.getInt("id"), node.getString("name"))
+  case _ => throw YamlException("Expected YAML mapping")
+
 
 val yaml = Yaml.load("""
   node:

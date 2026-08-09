@@ -22,8 +22,6 @@ import java.nio.file.Path
  * Provides YAML utilities.
  *
  * {{{
- * import scala.language.implicitConversions
- * 
  * import shampoo.yaml.{ *, given }
  * 
  * // Create YAML mapping
@@ -52,15 +50,15 @@ object Yaml:
     override def initialValue = SnakeYaml()
 
   /** Creates YAML mapping from supplied key-node pairs.  */
-  def map(pairs: (String, YamlNode)*): YamlMapping =
+  def map(pairs: (String, YamlNodeParam)*): YamlMapping =
     pairs.foldLeft(YamlMappingBuilder()) {
-      case (mapping, (key, node)) => mapping.add(key, node)
+      case (mapping, (key, node)) => mapping.add(key, ToYamlNode(node))
     }.toYamlMapping()
 
   /** Creates YAML sequence from supplied nodes.  */
-  def seq(nodes: YamlNode*): YamlSequence =
+  def seq(nodes: YamlNodeParam*): YamlSequence =
     nodes.foldLeft(YamlSequenceBuilder()) {
-      case (sequence, node) => sequence.add(node)
+      case (sequence, node) => sequence.add(ToYamlNode(node))
     }.toYamlSequence()
 
   /**

@@ -25,8 +25,6 @@ import scala.util.{ Failure, Try }
  * This constructor is required to perform actions such as the following:
  *
  * {{{
- * import scala.language.implicitConversions
- *
  * import shampoo.yaml.{ Yaml, YamlNode, given }
  *
  * val yaml = Yaml.map("values" -> Yaml.seq("abc", 123, true))
@@ -183,7 +181,3 @@ given yamlConstructorConversion[T](using constructor: YamlConstructor[T]): Conve
 /** Applies conversion using `YamlRepresenter`. */
 given yamlRepresenterConversion[T](using representer: YamlRepresenter[T]): Conversion[T, YamlNode] =
   representer.represent(_)
-
-/** Converts `YamlNode` to `YamlCollectionFacade`. */
-given yamlCollectionFacadeConversion: Conversion[YamlNode, YamlCollectionFacade] =
-  node => YamlCollectionFacade(expect(node))

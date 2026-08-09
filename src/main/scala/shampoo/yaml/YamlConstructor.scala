@@ -19,15 +19,14 @@ package shampoo.yaml
  * Defines YAML constructor.
  *
  * {{{
- * import scala.language.implicitConversions
- *
  * import shampoo.yaml.{ *, given }
  * 
  * case class User(id: Int, name: String)
  * 
  * // Define how to construct User from YAML
  * given YamlConstructor[User] =
- *    yaml => User(yaml("id"), yaml("name"))
+ *    case yaml: YamlMapping => User(yaml.getInt("id"), yaml.getString("name"))
+ *    case _ => throw YamlException("Expected YAML mapping")
  * 
  * val yaml = Yaml.load("{ id: 1000, name: lupita }")
  * 
