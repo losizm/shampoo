@@ -6,7 +6,7 @@ description   := "The YAML library for Scala"
 homepage      := Some(url("https://github.com/losizm/shampoo"))
 licenses      := List("Apache License, Version 2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
 
-scalaVersion  := "3.3.5"
+scalaVersion  := "3.3.7"
 scalacOptions := Seq("-deprecation", "-feature", "-new-syntax", "-Werror", "-Yno-experimental")
 
 Compile / doc / scalacOptions := Seq(
@@ -16,8 +16,8 @@ Compile / doc / scalacOptions := Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.snakeyaml" %  "snakeyaml-engine" % "3.0.1"    % Compile,
-  "org.scalatest" %% "scalatest"        % "3.2.19" % Test
+  "org.snakeyaml" %  "snakeyaml-engine" % "3.0.1"  % Compile,
+  "org.scalatest" %% "scalatest"        % "3.2.20" % Test
 )
 
 developers := List(
