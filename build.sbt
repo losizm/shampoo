@@ -1,6 +1,6 @@
 organization  := "com.github.losizm"
 name          := "shampoo"
-version       := "1.0.0"
+version       := "2.0.0-SNAPSHOT"
 versionScheme := Some("early-semver")
 description   := "The YAML library for Scala"
 homepage      := Some(url("https://github.com/losizm/shampoo"))
@@ -16,7 +16,7 @@ Compile / doc / scalacOptions := Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.snakeyaml" %  "snakeyaml-engine" % "2.9"    % Compile,
+  "org.snakeyaml" %  "snakeyaml-engine" % "3.0.1"    % Compile,
   "org.scalatest" %% "scalatest"        % "3.2.19" % Test
 )
 
